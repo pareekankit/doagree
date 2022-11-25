@@ -2,7 +2,7 @@ import { AnimateTimings } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { apiRoutes } from 'src/app/constants/apiRoutes';
 import { ApiCallMethodsService } from 'src/app/services/api-call-methods.service';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(private apiCallMethod:ApiCallMethodsService) { 
   }
   loginform=new FormGroup({
-    InputNumber:new FormControl('')
+  InputNumber:new FormControl('',[Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")])
   });
 
   login()
@@ -29,6 +29,9 @@ export class LoginComponent implements OnInit {
     }).catch((error:any)=>{
       console.log(error);
     })
+  }
+  get InputNumber(){
+    return this.loginform.get("InputNumber");
   }
 
   ngOnInit(): void {
