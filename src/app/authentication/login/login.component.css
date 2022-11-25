@@ -1,0 +1,58 @@
+.phone-heading{
+
+font-weight: 600;
+font-size: 24px;
+line-height: 36px;
+/* text-align: center; */
+color: #294A10;
+
+}
+.phone-text{
+font-weight: 400;
+font-size: 14px;
+line-height: 21px;
+
+color: rgba(52, 87, 26, 0.7);
+
+}
+.w-40{
+    width: 40%;
+}
+.mobile-number{
+font-weight: 400;
+font-size: 14px;
+line-height: 21px;
+color: #366315;
+}
+.w-30{
+    width: 30%;
+    border-radius: 14px;
+    background: #FFF8E8;
+}
+
+.btn{
+width: 150px;
+height: 36px;
+background: #2D5014;
+box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+color: aliceblue;
+font-size: 14px;
+line-height: 21px;
+}
+.custom-border{
+    border-radius: 10px;
+    border: 1px solid #2D5014;
+    background: #FFF8E8;
+    width: 341px;
+    
+    
+}
+.noborder{
+    border: transparent;
+    width: 90%;
+    background: #FFF8E8;
+}
+:focus-visible {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
