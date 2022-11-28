@@ -10,6 +10,7 @@ import { ApiCallMethodsService } from 'src/app/services/api-call-methods.service
 export class LoginComponent implements OnInit {
 
   constructor(private apiCallMethod:ApiCallMethodsService) { 
+    
   }
 
   login()
