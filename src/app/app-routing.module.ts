@@ -5,9 +5,9 @@ import { VerifyOtpComponent } from './authentication/verify-otp/verify-otp.compo
 
 const routes: Routes = [
  {path:'login',component:LoginComponent},
-  {path:'verify-otp',component:VerifyOtpComponent},
- {path:'',redirectTo:'/login',pathMatch:'full'}
-];
+ {path:'',redirectTo:'/login',pathMatch:'full'},
+  {path:'verify-otp/:No',component:VerifyOtpComponent},
+ ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
