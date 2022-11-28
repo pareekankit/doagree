@@ -1,0 +1,45 @@
+<section>
+    <div class="login-wrapper">
+        <div class="container">
+            <div class="py-5">
+                <div class="d-flex flex-column">
+                    <div class="Imgwrapper">
+                        <img src="../../../assets/Vector 9.png" alt="BackTriangle">
+                    </div>
+                    <div class="headingcontent">
+                        <h3 class="pt-2 m-0 phone-heading text-center" >Verify Mobile Number</h3>
+                        <p class="pt-2 m-0 phone-text text-center">We have sent a verfication OTP to </p>
+                    </div>
+                    <div class="welcome-person-img">
+                        <div class="w-40 m-auto pt-5">
+                        <img src="../../../assets/image 16.png" alt="" class="w-100">
+                       </div>
+                   </div>
+                   <div class="mobile-number-wrapper">
+                    <h3 class="mobile-number pt-2 m-0 text-center"> Enter the OTP below</h3>
+                   </div>
+                   <form [formGroup] ='otpForm' (ngSubmit)="verifyOtp()">
+                   <div>
+                    <input type="text" name='otp1' class="otp-Box" formControlName="otp1">
+                    <input type="text" name='otp2'class="otp-Box" formControlName="otp2">
+                    <input type="text" name='otp3' class="otp-Box" formControlName="otp3">
+                    <input type="text" name='otp4' class="otp-Box" formControlName="otp4">
+                   </div>
+                
+                   <h3 class="mobile-number pt-2 m-0 text-center">Didn`t Receive OTP? Resend OTP</h3>
+                   <div class="mobile-inputbox">
+                    <div class="d-flex pt-3 justify-content-center">
+                        </div>
+                        <div class="loginBtn">
+                            <div class=" pt-3 d-flex pt-3 justify-content-center">
+                                <input type="submit" value="VERIFY & PROCEED" class="btn"  >
+                               </div>
+                           </div>
+                        </div>
+                    </form>
+                           <h3 class="mobile-number pt-2 m-0 text-center">Change Phone Number?</h3>
+                   </div>
+                </div>
+            </div>
+        </div>
+</section>
