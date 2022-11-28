@@ -1,0 +1,57 @@
+.background{
+width: 50%;
+height: 100%;
+margin: auto;
+padding-top: 2rem;
+background: #FFFFFF;
+box-shadow: 0px -4px 30px rgba(0, 0, 0, 0.25);
+border-radius: 30px 30px 0px 0px;
+}
+.pinloc{
+    margin-top: 16px;
+    width: 35px
+}
+.autolocation{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 59px;
+    text-align: center;
+    color: #366315;
+}
+.clr{
+    color: black;
+}
+.custom-border{
+    width: 341px;
+    background: #FFF8E8;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+}
+.noborder{
+    border: transparent;
+    width: 90%;
+    padding: 9px;
+    background: #FFF8E8;
+}
+.otp-Box{
+    width: 40px;
+    height: 40px;
+    left: 89px;
+    top: 486px;
+    background: #FFF8E8;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 10px;
+}
+.bg-photo{
+    background-image: url('../../assets/4329918 1.png');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 100vh;
+}
+.custom-padding{
+    padding-top: 10rem !important;
+}

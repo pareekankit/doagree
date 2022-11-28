@@ -1,0 +1,62 @@
+<section>
+  <div class="location-wrapper">
+    <div class="container">
+      <div class="col-12">
+        <div class="d-flex justify-content-center flex-column ">
+          <div class="pt-5 custom-padding bg-photo">
+            <!-- <img src="../../assets/4329918 1.png" /> -->
+            <div class="background ">
+                <div class=" d-flex justify-content-around">
+                  <div>
+                    <img src="../../assets/Frame 45.png" class="pinloc" (click)="currlocation()" />
+                  </div>
+                  <div class="justify-content-center">
+                    <p class="autolocation" (click)="currlocation()">Use my current location</p>
+                  </div>
+                  <div>
+                    <img src="../../assets/Vector 9.png" />
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center pt-3">
+                  <img src="../../assets/Line 68.png" />
+                </div>
+                <div class="d-flex flex-column justify-content-around">
+                  <div>
+                    <p class="autolocation">Village/City Name</p>
+                  </div>
+                  <div>
+                    <input type="text" name="cname" class="ms-3 custom-border noborder autolocation clr" [(ngModel)]="city">
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center pt-3">
+                    <img src="../../assets/Line 68.png" />
+                  </div>
+                <div class="d-flex justify-content-center pt-3">
+                  <div class="">
+                    <div class="d-flex flex-column justify-content-around">
+                        <div>
+                            <p class="autolocation">
+                                Postal Code
+                            </p>
+                            <div class="d-flex justify-content-center" >
+                                <input type="text" class="otp-Box autolocation clr" maxlength="1" value="{{(pin?.length>0) ? pin[0] : null}}">
+                                <input type="text" class="otp-Box autolocation clr" maxlength="1" value="{{(pin?.length>0) ? pin[1] : null}}" >
+                                <input type="text" class="otp-Box autolocation clr" maxlength="1" value="{{(pin?.length>0) ? pin[2] : null}}">
+                                <input type="text" class="otp-Box autolocation clr" maxlength="1" value="{{(pin?.length>0) ? pin[3] : null}}">
+                                <input type="text" class="otp-Box autolocation clr" maxlength="1" value="{{(pin?.length>0) ? pin[4] : null}}">
+                                <input type="text" class="otp-Box autolocation clr" maxlength="1" value="{{(pin?.length>0) ? pin[5] : null}}">
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+              </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

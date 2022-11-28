@@ -27,7 +27,8 @@
                         <div *ngIf= 'InputNumber && InputNumber.invalid && InputNumber.touched ' style="color: red;">*This is a required field</div>
                         <div class="loginBtn">
                             <div class=" pt-3 d-flex pt-3 justify-content-center">
-                                <input type="submit" value="Login" class="btn" [disabled] ="loginform.invalid" >
+                                <input type="submit" value="Login" class="btn" [disabled] ="loginform.invalid">
+                                <a routerLinkActive="active" areaCurrentWhenActive="page"> </a>
                                </div>
                            </div>
                         </form>

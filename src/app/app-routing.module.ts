@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './authentication/login/login.component';
 import { VerifyOtpComponent } from './authentication/verify-otp/verify-otp.component';
+import { GeolocationComponent } from './geolocation/geolocation.component';
 
 const routes: Routes = [
  {path:'login',component:LoginComponent},
-  {path:'verify-otp',component:VerifyOtpComponent},
- {path:'',redirectTo:'/login',pathMatch:'full'}
+  {path:'verify-otp/:number',component:VerifyOtpComponent},
+  {path:'geolocation',component:GeolocationComponent},
+ {path:'',redirectTo:'/geolocation',pathMatch:'full'}
 ];
 
 @NgModule({
