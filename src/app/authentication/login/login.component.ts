@@ -12,6 +12,7 @@ import { FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
   mobileNumber:any;
   constructor(private apiCallMethod:ApiCallMethodsService) { 
+    
   }
   loginform=new FormGroup({
   InputNumber:new FormControl('',[Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")])
