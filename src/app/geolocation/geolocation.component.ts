@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { apiRoutes } from '../constants/apiRoutes';
 import { ApiCallMethodsService } from '../services/api-call-methods.service';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { Route, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-geolocation',
@@ -11,7 +13,7 @@ export class GeolocationComponent implements OnInit {
   city:any;
   pin:any;
   
-  constructor(private service:ApiCallMethodsService) {
+  constructor(private service:ApiCallMethodsService, private route:Router) {
  
  }
   userlocation:any={
@@ -44,10 +46,13 @@ export class GeolocationComponent implements OnInit {
   this.service.post(apiRoutes.location,this.userlocation).
   then((response:any)=>{
       console.log(response);
+      this.route.navigate(['landing-page']);
   }).catch((error:any)=>{
     console.log(error);
   })
+
  }
+
   ngOnInit(): void {
   }
 }
