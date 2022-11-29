@@ -8,7 +8,7 @@ const routes: Routes = [
  {path:'login',component:LoginComponent},
   {path:'verify-otp/:number',component:VerifyOtpComponent},
   {path:'geolocation',component:GeolocationComponent},
- {path:'',redirectTo:'/geolocation',pathMatch:'full'}
+ {path:'',redirectTo:'/login',pathMatch:'full'}
 ];
 
 @NgModule({
