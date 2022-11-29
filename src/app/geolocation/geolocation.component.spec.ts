@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GeolocationComponent } from './geolocation.component';
+// import { GeolocationComponent } from './geolocation.component';
 
-describe('GeolocationComponent', () => {
-  let component: GeolocationComponent;
-  let fixture: ComponentFixture<GeolocationComponent>;
+// describe('GeolocationComponent', () => {
+//   let component: GeolocationComponent;
+//   let fixture: ComponentFixture<GeolocationComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ GeolocationComponent ]
-    })
-    .compileComponents();
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       declarations: [ GeolocationComponent ]
+//     })
+//     .compileComponents();
 
-    fixture = TestBed.createComponent(GeolocationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//     fixture = TestBed.createComponent(GeolocationComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });

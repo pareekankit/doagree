@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       .post(apiRoutes.login, data)
       .then((response: any) => {
         console.log(response);
-        this.route.navigate(['/verify-otp',data.mobile_no]);
+        this.router.navigate(['/verify-otp',data.mobile_no]);
     }).catch((error:any)=>{
       console.log(error);
     })

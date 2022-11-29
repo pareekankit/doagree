@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { apiRoutes } from 'src/app/constants/apiRoutes';
 import { ApiCallMethodsService } from 'src/app/services/api-call-methods.service';
 import { LoginComponent } from "src/app/authentication/login/login.component";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-verify-otp',
@@ -18,7 +18,7 @@ userdata:any={
 }
 timeLeft: number = 60;
 
-constructor(private apiCallMethod:ApiCallMethodsService, private route:ActivatedRoute , ) {
+constructor(private apiCallMethod:ApiCallMethodsService, private route:ActivatedRoute , private router:Router ) {
     
    }
   verifyOtp()
@@ -37,6 +37,7 @@ constructor(private apiCallMethod:ApiCallMethodsService, private route:Activated
       console.log(response);
       localStorage.setItem('token', JSON.stringify(response.token));
       console.log(response.token)
+      this.router.navigate(['/profile'])
       }).catch((error:any)=>{
       console.log(error);
     })
