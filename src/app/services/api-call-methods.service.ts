@@ -75,4 +75,7 @@ export class ApiCallMethodsService {
       )
     })
   }
+  getlocation(){
+    return this.httpClient.get("https://ipapi.co/json");
+  }
 }

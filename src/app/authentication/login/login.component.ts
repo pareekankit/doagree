@@ -4,14 +4,17 @@ import { apiRoutes } from 'src/app/constants/apiRoutes';
 import { ApiCallMethodsService } from 'src/app/services/api-call-methods.service';
 import { FormControl, Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { Route, Router, RouterLink } from '@angular/router';
 import { VerifyOtpComponent } from '../verify-otp/verify-otp.component';
-import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+
   mobileNumber: any;
   constructor(
     private apiCallMethod: ApiCallMethodsService,
@@ -35,12 +38,11 @@ export class LoginComponent implements OnInit {
       .post(apiRoutes.login, data)
       .then((response: any) => {
         console.log(response);
-        this.router.navigate(['/verify-otp',data.mobile_no]);
-      })
-      .catch((error: any) => {
-       
-        console.log(error);
-      });
+        this.route.navigate(['/verify-otp',data.mobile_no]);
+    }).catch((error:any)=>{
+      console.log(error);
+    })
+
   }
   get InputNumber() {
     return this.loginform.get('InputNumber');
