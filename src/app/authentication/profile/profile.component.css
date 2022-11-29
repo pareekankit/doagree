@@ -1,0 +1,50 @@
+.custom-Position{
+    left: 80%;
+    bottom: -60%;
+
+}
+.CustomPosition2{
+    top: 0%;
+}
+.w-10{
+    width: 20%;
+}
+.customInPut{
+     background: #FFF8E8;
+     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+     border-radius: 25px;
+     
+}
+legend{
+font-size: 20px;
+line-height: 21px;
+color: #366315;
+}
+input,select{
+    outline: transparent;
+    border: transparent !important;
+}
+input:focus-visible{
+    outline: transparent !important;
+}
+.customBtn{
+background: #2D5014;
+border: 1px solid #2D5014;
+box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+color: white;
+}
+.backGround-color{
+
+}
+.HeadingText{
+font-size: 24px;
+line-height: 36px;
+text-align: center;
+color: #294A10;
+}
+.cameraBorder{
+    background-color: #D6D4D4;
+    border-radius: 50%;
+    padding: 4px;
+}

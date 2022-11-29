@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
       Validators.required,
       Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),
     ]),
+
   });
 
   login() {
