@@ -13,17 +13,18 @@ import { ActivatedRoute } from '@angular/router';
 export class VerifyOtpComponent implements OnInit  {
 otp: any ;
 order:any ;
-dataUser:any ;
 userdata:any={
   mobile_no:"",
 }
+timeLeft: number = 60;
+
 constructor(private apiCallMethod:ApiCallMethodsService, private route:ActivatedRoute , ) {
     
    }
   verifyOtp()
   {
     // console.log(this.otpForm.value);
-    this.otp=this.otpForm.value.otp1+""+this.otpForm.value.otp2+""+this.otpForm.value.otp3+""+this.otpForm.value.otp4;
+    this.otp=this.otpForm.value.otp1+""+this.otpForm.value.otp2+this.otpForm.value.otp3+this.otpForm.value.otp4;
     this.route.params.subscribe((params:any)=>{
       console.log('params',params);
       this.userdata.mobile_no=params.No
@@ -34,28 +35,41 @@ constructor(private apiCallMethod:ApiCallMethodsService, private route:Activated
     console.log(this.userdata)
     this.apiCallMethod.post(apiRoutes.otp,this.userdata).then((response:any)=>{
       console.log(response);
-      this.dataUser = response;
-      localStorage.setItem('token', JSON.stringify(this.dataUser.token));
+      localStorage.setItem('token', JSON.stringify(response.token));
+      console.log(response.token)
       }).catch((error:any)=>{
       console.log(error);
     })
   }
   otpForm= new FormGroup
   ({
-    otp1: new FormControl(" "),
-    otp2: new FormControl(" "),
-    otp3: new FormControl(" "),
-    otp4: new FormControl(" ")
+    otp1: new FormControl(""),
+    otp2: new FormControl(""),
+    otp3: new FormControl(""),
+    otp4: new FormControl("")
   });
   
   ngOnInit(): void {
   }
-  move(e:any,p:any,c:any,n:any)
+ 
+// startTimer() {
+//     this.interval = setInterval(() => {
+//       if(this.timeLeft > 0) {
+//         this.timeLeft--;
+//       } else {
+//         this.timeLeft = 60;
+//       }
+//     },1000)
+//   }
+  move(e:any,p:any,n:any)
   {
       if(n!=''){
           n.focus();
       }
         console.log(e);
+      if (e.key === 'Backspace') {
+          p.focus();
+        }
   }
 
 }

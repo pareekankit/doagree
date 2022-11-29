@@ -22,10 +22,10 @@
                    </div>
                    <form [formGroup] ='otpForm' (ngSubmit)="verifyOtp()">
                    <div class="d-flex justify-content-center py-3 ">
-                    <input type="text" name='otp1' class="otp-Box" #otp1 (keyup)="move($event,'',otp1,otp2)" formControlName="otp1">
-                    <input type="text" name='otp2'class="otp-Box" #otp2  (keyup)="move($event,otp1,otp2,otp3)" formControlName="otp2">
-                    <input type="text" name='otp3' class="otp-Box" #otp3  (keyup)="move($event,otp2,otp3,otp4)" formControlName="otp3">
-                    <input type="text" name='otp4' class="otp-Box" #otp4 (keyup)="move($event,otp3,otp4,'')" formControlName="otp4">
+                    <input type="text" name='otp1' class="otp-Box" #otp1 (keyup)="move($event,'',otp2)" formControlName="otp1">
+                    <input type="text" name='otp2' class="otp-Box" #otp2 (keyup)="move($event,otp1,otp3)" formControlName="otp2">
+                    <input type="text" name='otp3' class="otp-Box" #otp3 (keyup)="move($event,otp2,otp4)" formControlName="otp3">
+                    <input type="text" name='otp4' class="otp-Box" #otp4 (keyup)="move($event,otp3,'')" formControlName="otp4">
                    </div>
                 
                    <h3 class="mobile-number pt-2 m-0 text-center">Didn`t Receive OTP?</h3>
