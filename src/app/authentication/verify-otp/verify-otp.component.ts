@@ -35,9 +35,9 @@ constructor(private apiCallMethod:ApiCallMethodsService, private route:Activated
     console.log(this.userdata)
     this.apiCallMethod.post(apiRoutes.otp,this.userdata).then((response:any)=>{
       console.log(response);
-      localStorage.setItem('token', JSON.stringify(response.token));
+      localStorage.setItem('token',response.token);
       console.log(response.token)
-      this.router.navigate(['/profile'])
+      this.router.navigate(['/profile',this.userdata.mobile_no])
       }).catch((error:any)=>{
       console.log(error);
     })
