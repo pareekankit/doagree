@@ -8,9 +8,11 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { SharedModule } from './shared/shared.module';
 import { MainModule } from './main/main.module';
 import { FormsModule } from '@angular/forms';
+import { GeolocationComponent } from './geolocation/geolocation.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GeolocationComponent
   ],
   imports: [
     BrowserModule,
