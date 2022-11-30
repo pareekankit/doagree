@@ -1,0 +1,293 @@
+.font-style{
+    width: 17px;
+    height: 17px;
+}
+.z-index-custom{
+    z-index: 9999;
+}
+*{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+}
+.nav-link{
+    font-size: 16px !important;
+    line-height: 1.5rem !important;
+    color: #366315 !important;
+}
+.navbar-brand{
+    font-size: 1.84rem !important;
+}
+.bg-header{
+    background: #fff8e8;
+}
+.youtubeIconWidth{
+    width: 50px;height: 50px;
+}
+.welcome-heading{
+    font-size: 24px !important;
+    line-height: 18px !important;
+    /* text-align: center !important; */
+    color: #294A10 !important;
+}
+.welcome-text{
+    font-size: 15px !important;
+    line-height: 18px !important;
+    color: rgba(54, 99, 21, 0.7) !important;
+    }
+.bg-banner{
+    background-image: url('../../../assets/HowtosellyourAnimal1.png');
+    background-color: inherit;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:70vh;
+}    
+.sticky{
+   position: -webkit-sticky;
+   top: 0;
+}
+.custom-btn{
+    background-color: #fff8e8;
+    font-size: 17px;border-radius: 10px;
+    font-weight: bold;border: 1px solid #fff8e8;padding:5px;
+}
+.text-color{
+    color: #294A10 !important;
+}
+.location-style{
+    line-height: .54rem !important;
+    font-weight: bold;
+    font-size: 25px !important;
+}
+.ads-time-style{
+    line-height: .56rem !important;
+    font-size: 18px !important;
+}
+.Explore-ads-style{
+    line-height: .56rem !important;
+    font-size: 18px !important;
+}
+.call-btn{
+    background-color: #0C45D8;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: #0C45D8 1px solid;
+}
+.cow-name{
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 20px;}
+.cow-rate{
+    font-weight: 700;
+    font-size: 29px;
+    line-height: 27px;
+    color: #29A71A;
+    text-align: start;
+}    
+a{
+    text-decoration: none;
+    list-style-type: none;
+}
+.Detail{
+    font-weight: 500;
+font-size: 14px;
+line-height: 12px;
+
+}
+.box-shadow{
+    border-radius: 5px;
+    border: 1px solid #e7cf95;
+}
+.bg-color{
+    background-color: #fff8e8;
+}
+.img-border-top{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: clamp(20px, 2.5vw, 36px);
+  color: rgba(#fff, 0.8);
+  font-weight: 600;
+  text-align: center;
+}
+
+.customimg-scroll {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+ul::-webkit-scrollbar {
+    display: none;
+}
+
+ul{
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+  border: transparent;
+}
+li {
+  /* position: -webkit-sticky;
+  position: sticky;
+  left: 0; */
+  width: min(50vw, 350px);
+  display: inline-block;
+  /* text-align: center; */
+  background-color: #fff8e8;
+  color: #9b9dad;
+  padding-bottom: 1.5rem;
+  font-size: clamp(18px, 2.5vw, 22px);
+  box-shadow: -10px 0 30px 0 rgba(#000, 0.25);
+  margin-left: -4px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #1e1f26;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.personName{
+ font-size: 20px;
+ font-weight: bold;
+line-height: 21px;
+text-align: center;
+color: #294A10;
+}
+.placeName{
+font-size: 15px;
+line-height: 16px;
+text-align: center;
+color: #366315;
+}
+.follow-btn{
+    background-color: #2D5014;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 16px;
+    color: white;
+    border: 1px solid #2D5014;
+}
+.ulpersonscroll {
+    padding: 0;
+    margin: 0;
+    display: block;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: center;
+    scroll-behavior: smooth;
+  }
+  .ulpersonscroll::-webkit-scrollbar {
+      display: none;
+  }
+  
+  .ulpersonscroll{
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+    border: transparent;
+  }
+  .lipseronscroll {
+    /* position: -webkit-sticky;
+    position: sticky;
+    left: 0; */
+    width: min(50vw, 250px);
+    display: inline-block;
+    /* text-align: center; */
+    background-color: #fff8e8;
+    color: #9b9dad;
+    padding-bottom: 1.5rem;
+    font-size: clamp(18px, 2.5vw, 22px);
+    box-shadow: -10px 0 30px 0 rgba(#000, 0.25);
+    margin-left: -4px;
+  }
+  .Recommended-seller-heading{
+    font-size: 22px;
+    line-height: 21px;
+    color: #294A10;
+    font-weight: bold;
+
+    }
+    .Dairy-heading {
+        font-size: 22px;
+        line-height: 21px;
+        color: #294A10;
+        font-weight: bold;
+    
+    }
+    .password-style{
+        line-height: .56rem !important;
+        font-size: 18px !important;
+    }
+    .money-head{
+        font-size: 18px;
+        line-height: 18px;
+        color: #4E931C;
+    }
+    .money-value{
+        font-size: 20px;
+        line-height: 18px;
+        color: #F00C0C;
+        font-weight: bold;
+    }
+    .first-bg{
+        background: rgba(78, 147, 28, 0.1);
+    }
+    .second-bg{
+        background: rgba(220, 13, 13, 0.1);
+    }
+    .red-color{
+        color: #F00C0C;
+    }
+    .borderLeft-side{
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .borderRight-side{
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .Animalname{
+        font-size: 18px;
+        font-weight: bold;
+        color: #29A71A;
+    }
+    .border-one{
+        border: 1px solid #29A71A;
+    }

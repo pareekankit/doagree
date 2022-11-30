@@ -3,6 +3,7 @@ import { FormGroup,FormControl,Validators } from '@angular/forms';
 import { apiRoutes } from 'src/app/constants/apiRoutes';
 import { ApiCallMethodsService } from 'src/app/services/api-call-methods.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -14,13 +15,17 @@ export class ProfileComponent implements OnInit {
   AvatarImg:any='../../../assets/Ellipse 94.png';
   imgFlag:number=0;
   signModalDataService:any;
-  constructor(private apiCallMethod:ApiCallMethodsService,private sanitizer: DomSanitizer) {}
+  mobileNo:any;
+  constructor(private apiCallMethod:ApiCallMethodsService,private sanitizer: DomSanitizer,private Route:ActivatedRoute,private router:Router) {
+
+  }
 
   RegisterForm=new FormGroup({
     validUserName: new FormControl('',[Validators.required]),
     validAge: new FormControl('',[Validators.required]),
     validReferalCode: new FormControl('',[Validators.required]),
-    validGender:new FormControl('',[Validators.required])
+    validGender:new FormControl('',[Validators.required]),
+    validOccupation: new FormControl('',[Validators.required])
   });
  
   @ViewChild('Gender') Gender!: ElementRef;
@@ -41,19 +46,23 @@ export class ProfileComponent implements OnInit {
    
   saveandContinue()
       {
-        console.log(this.RegisterForm.value)
+        this.Route.params.subscribe((params:any)=>{
+          this.mobileNo=params.No;
+        })
           let data : any = {
             name:this.RegisterForm.value.validUserName,
-            mobile_no : '9509848261',
             picture:this.AvatarImg,
             gender:this.RegisterForm.value.validGender,
             age:this.RegisterForm.value.validAge,
-            reference_code:'',
-            language:'hi'
-          }
-          this.apiCallMethod.post(apiRoutes.login,data).
+            reference_code:this.RegisterForm.value.validReferalCode,
+            mobile_no:this.mobileNo,
+            occupation:this.RegisterForm.value.validOccupation
+
+          } 
+          this.apiCallMethod.post(apiRoutes.profile,data).
           then((response:any)=>{
             console.log(response);
+            this.router.navigate(['/geolocation']);
           }).catch((error:any)=>{
             console.log(error);
           })
