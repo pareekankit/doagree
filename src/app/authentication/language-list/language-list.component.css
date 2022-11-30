@@ -1,0 +1,26 @@
+.bg-color{
+    color: #294A10;
+    background: #FFF8E8;
+}
+
+.text-color{
+    color: #294A10;
+}
+
+*{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+}
+
+.next-btn{
+    background: #2D5014;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    color: #fff;
+    border: 1px solid #294A10;
+}
+.customPosition{
+    left: 6px;
+    top: 2px;
+}

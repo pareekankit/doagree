@@ -5,6 +5,7 @@ import { LoginComponent } from './authentication/login/login.component';
 import { VerifyOtpComponent } from './authentication/verify-otp/verify-otp.component';
 import { GeolocationComponent } from './geolocation/geolocation.component';
 import { LandingPageComponent } from './main/landing-page/landing-page.component';
+import { LanguageListComponent } from './authentication/language-list/language-list.component';
 
 const routes: Routes = [
  {path:'login',component:LoginComponent},
@@ -12,7 +13,8 @@ const routes: Routes = [
  {path:'verify-otp/:No',component:VerifyOtpComponent},
  {path:'geolocation',component:GeolocationComponent},
  {path:'landing-page',component:LandingPageComponent},
- {path:'',redirectTo:'/login',pathMatch:'full'},
+ {path:'language-list',component:LanguageListComponent},
+ {path:'',redirectTo:'/language-list',pathMatch:'full'},
 
 
 ];

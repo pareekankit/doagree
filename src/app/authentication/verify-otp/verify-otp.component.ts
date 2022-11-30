@@ -16,7 +16,6 @@ order:any ;
 userdata:any={
   mobile_no:"",
 }
-timeLeft: number = 60;
 
 constructor(private apiCallMethod:ApiCallMethodsService, private route:ActivatedRoute , private router:Router ) {
     

@@ -4,12 +4,14 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LanguageListComponent } from './language-list/language-list.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     ProfileComponent,
-    VerifyOtpComponent
+    VerifyOtpComponent,
+    LanguageListComponent
   ],
   imports: [
     CommonModule,
