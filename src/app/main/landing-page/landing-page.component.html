@@ -19,8 +19,8 @@
                       <a class="nav-link py-3"><img src="/assets/padlock.png" alt="" class="font-style mx-1">Privacy Policy</a>
                       <a class="nav-link py-3" ><img src="/assets/files.png" alt="" class="font-style mx-1">Terms & Conditions</a>
                       <div class="authentication-wrapper d-flex ">
-                        <a class="nav-link py-3"><img src="/assets/user.png" alt="" class="font-style mx-1"></a>
-                        <a class="nav-link py-3"><img src="/assets/logout.png" alt="" class="font-style mx-1"></a>
+                        <a class="nav-link py-3" (click)="getProfileData()"><img src="/assets/user.png" alt="" class="font-style mx-1"></a>
+                        <a class="nav-link py-3" (click)="logOut()"><img src="/assets/logout.png" alt="" class="font-style mx-1"></a>
                       </div>
                       
                     </div>
@@ -42,8 +42,8 @@
                         </div>
                     </div>
                     <div class="col-4 d-flex justify-content-end pe-2">
-                        <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
-                            <img src="/assets/youtube.png" alt="youtubeIcon" class="youtubeIconWidth">
+                        <a [href]="youtube_link" target="_blank">
+                            <img src="/assets/youtube.png"  alt="youtubeIcon" class="youtubeIconWidth">
                         </a>
                     </div>
                 </div>
@@ -54,9 +54,9 @@
 <section>
     <div class="banner-carusal-wrapper">
         <div class="container px-0">
-            <div class="bg-banner">
+            <div class="bg-banner " style="background-image:url({{bannerImg}});">
                 <div class="d-flex justify-content-center align-items-center pt-5 ">
-                    <button class="custom-btn mt-5">Sell Animal</button>
+                    <button class="custom-btn mt-5" [title]="sellAnimal">{{sellAnimal}}</button>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
             <div class="d-flex flex-column">
                 <div class="d-flex flex-row pt-4">
                     <div class="col-6">
-                        <h3 class="text-start text-color location-style">Ads near your location</h3>
+                        <h3 class="text-start text-color location-style">{{locationName}}</h3>
                         <p class="text-start text-color ads-time-style pt-3"> last {{24}} hours-{{120}} ads</p>                        
                     </div>
                     <div class="col-6 text-end">
@@ -181,7 +181,7 @@
         <div class="farmer-income-wrapper">
             <div class="container">
                 <div class="d-flex col-12 pt-4 " >
-                    <img src="/assets/How to sell your Animal (2) 1@3x.png" alt="" class="w-100">
+                    <img [src]="safetyTips" alt="" class="w-100">
                 </div>
             </div>
         </div>
@@ -197,7 +197,7 @@
                 <div class="overflow-hidden d-flex custom-width">
                     
                     <ul class="pt-3 ulpersonscroll">
-                        <li class="box-shadow me-3 my-2 lipseronscroll">
+                        <li class="box-shadow me-3 my-2 lipseronscroll" *ngFor="let person of recommenderSeller;let i=index;">
                             <div class="w-25 m-auto pt-3">
                                 <img src="/assets/Ellipse 97.png" alt="" class="w-100 img-border-top customimg-scroll" >
                             </div>
@@ -210,44 +210,7 @@
                             </div>
                         </li>
 
-                        <li class="box-shadow me-3 my-2 lipseronscroll">
-                            <div class="w-25 m-auto pt-3">
-                                <img src="/assets/Ellipse 97.png" alt="" class="w-100 img-border-top customimg-scroll" >
-                            </div>
-                            <div class="d-flex flex-column justify-content-between">
-                                <h3 class="personName">Person Name</h3>
-                                <p class="placeName">Place Name</p>
-                                <a>
-                                    <button type="button" class="follow-btn">Follow</button>
-                                </a>
-                            </div>
-                        </li>
-
-                        <li class="box-shadow me-3 my-2 lipseronscroll">
-                            <div class="w-25 m-auto pt-3">
-                                <img src="/assets/Ellipse 97.png" alt="" class="w-100 img-border-top customimg-scroll" >
-                            </div>
-                            <div class="d-flex flex-column justify-content-between">
-                                <h3 class="personName">Person Name</h3>
-                                <p class="placeName">Place Name</p>
-                                <a>
-                                    <button type="button" class="follow-btn">Follow</button>
-                                </a>
-                            </div>
-                        </li>
-    
-                        <li class="box-shadow me-3 my-2 lipseronscroll">
-                            <div class="w-25 m-auto pt-3">
-                                <img src="/assets/Ellipse 97.png" alt="" class="w-100 img-border-top customimg-scroll" >
-                            </div>
-                            <div class="d-flex flex-column justify-content-between">
-                                <h3 class="personName">Person Name</h3>
-                                <p class="placeName">Place Name</p>
-                                <a>
-                                    <button type="button" class="follow-btn">Follow</button>
-                                </a>
-                            </div>
-                        </li>
+                        
                     </ul>
             </div>
         </div>
