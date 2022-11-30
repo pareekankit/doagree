@@ -12,9 +12,7 @@ const routes: Routes = [
  {path:'verify-otp/:No',component:VerifyOtpComponent},
  {path:'geolocation',component:GeolocationComponent},
  {path:'landing-page',component:LandingPageComponent},
- {path:'',redirectTo:'/login',pathMatch:'full'},
-
-
+ {path:'',redirectTo:'/landing-page',pathMatch:'full'},
 ];
 
 

@@ -44,7 +44,7 @@ export class ProfileComponent implements OnInit {
         }
       }
    
-  saveandContinue()
+  saveAndContinue()
       {
         this.Route.params.subscribe((params:any)=>{
           this.mobileNo=params.No;
