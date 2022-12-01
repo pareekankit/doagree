@@ -1,6 +1,6 @@
 export const baseUrl = 'https://myclientdemo.us/doagri/public/api/';
 export const apiRoutes = {
-   language:'auth/lang',
+   language:'language-list',
    login : 'auth/login',
    otp : 'auth/verify-otp',
    profile:'auth/edit-profile',

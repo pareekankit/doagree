@@ -13,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class VerifyOtpComponent implements OnInit  {
 otp: any ;
 order:any ;
+invalidOtp:any;
 userdata:any={
   mobile_no:"",
 }
@@ -26,7 +27,7 @@ constructor(private apiCallMethod:ApiCallMethodsService, private route:Activated
     this.otp=this.otpForm.value.otp1+""+this.otpForm.value.otp2+this.otpForm.value.otp3+this.otpForm.value.otp4;
     this.route.params.subscribe((params:any)=>{
       console.log('params',params);
-      this.userdata.mobile_no=params.No
+      this.userdata.mobile_no=params.No;
     })  
     console.log(this.otp)
 
@@ -35,10 +36,11 @@ constructor(private apiCallMethod:ApiCallMethodsService, private route:Activated
     this.apiCallMethod.post(apiRoutes.otp,this.userdata).then((response:any)=>{
       console.log(response);
       localStorage.setItem('token',response.token);
-      console.log(response.token)
-      this.router.navigate(['/profile',this.userdata.mobile_no])
+      console.log(response.token);
+      this.router.navigate(['/profile'])
       }).catch((error:any)=>{
-      console.log(error);
+      console.log(error.error.message);
+      this.invalidOtp=error.error.message;
     })
   }
   otpForm= new FormGroup

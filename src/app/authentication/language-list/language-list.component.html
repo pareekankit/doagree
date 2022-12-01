@@ -7,6 +7,7 @@
             <div class="select-box pt-3">
                 <p class="text-center text-color">Select Your Language</p>
             </div>
+            <form (ngSubmit)="nextToLogin()">
             <div class="d-flex flex-column col-12">
                 <div class="d-flex flex-row justify-content-center pt-5">
                     <div class=" bg-color col-3 ">
@@ -28,8 +29,10 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center col-12 pt-5">
-                <input type="submit" class="next-btn col-1" value="NEXT" (click)="nextToLogin()">
+                <a routerLink="/login"></a>
+                <input type="submit" class="next-btn col-1" value="NEXT">
             </div>
+        </form>
         </div>
     </div>
 </section>
