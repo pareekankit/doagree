@@ -17,7 +17,22 @@ export class ProfileComponent implements OnInit {
   signModalDataService:any;
   mobileNo:any;
   constructor(private apiCallMethod:ApiCallMethodsService,private sanitizer: DomSanitizer,private Route:ActivatedRoute,private router:Router) {
+    apiCallMethod.get(apiRoutes.getProfile).then((response:any)=>{
+      console.log(response.data)
+      this.RegisterForm.setValue(
+        {
+         validUserName:response.data.name,
+         validAge:response.data.age,
+         validReferalCode:response.data.reference_code,
+         validGender:response.data.gender,
+         validOccupation:response.data.occupation,
+         vaildMobileNo:response.data.phone,
+        },
+        this.AvatarImg=response.data.image
+      )
 
+    })
+   
   }
 
   RegisterForm=new FormGroup({
@@ -25,17 +40,19 @@ export class ProfileComponent implements OnInit {
     validAge: new FormControl('',[Validators.required]),
     validReferalCode: new FormControl('',[Validators.required]),
     validGender:new FormControl('',[Validators.required]),
-    validOccupation: new FormControl('',[Validators.required])
+    validOccupation: new FormControl('',[Validators.required]),
+    vaildMobileNo:new FormControl(''),
   });
+  
  
   @ViewChild('Gender') Gender!: ElementRef;
 
 	checkGender(SelectImgAvatar:any):void 
       {
-        console.log(this.imgFlag)
+
         if(this.imgFlag==0)
         {
-            if(this.Gender.nativeElement.value=='Male'){
+          if(this.Gender.nativeElement.value=='Male'){
             SelectImgAvatar.src='../../../assets/Ellipse 94.png';
           }
           else{
@@ -43,8 +60,11 @@ export class ProfileComponent implements OnInit {
           }
         }
       }
-   
-  saveandContinue()
+  
+  goOnLoginPage(){
+        this.router.navigate(['/login']);
+      }
+  saveAndContinue()
       {
         this.Route.params.subscribe((params:any)=>{
           this.mobileNo=params.No;

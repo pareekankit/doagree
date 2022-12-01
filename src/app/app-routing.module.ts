@@ -9,6 +9,7 @@ import { LandingPageComponent } from './main/landing-page/landing-page.component
 const routes: Routes = [
  {path:'login',component:LoginComponent},
  {path:"profile/:No",component:ProfileComponent},
+ {path:"profile",component:ProfileComponent},
  {path:'verify-otp/:No',component:VerifyOtpComponent},
  {path:'geolocation',component:GeolocationComponent},
  {path:'landing-page',component:LandingPageComponent},

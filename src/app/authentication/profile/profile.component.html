@@ -6,7 +6,7 @@
                     <div class="d-flex flex-column">
                         <div class="BackBtn-wrapper">
                             <div class="col-1">
-                                <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
+                                <a [routerLink]="'/login'"  >
                                     <img src="../.././../assets/Vector 9.png" alt="Backbtn">
                                 </a>
                             </div>
@@ -14,19 +14,20 @@
                         <div class="information-wapper">
                             <h3 class="HeadingText pt-3">Your Information</h3>
                         </div>
-                        <div class="personFace-wrapper">
-                            <div class="m-auto col-1 pt-5 mt-4 position-relative">
-                                <img [src]="url ? url : AvatarImg" alt="PersonFace" class="w-100 position-absolute CustomPosition2" name="myImg" ngDefaultControl #SelectImgAvatar [(ngModel)]="AvatarImg">
-                                <img src="../../../assets/Vector (1).png" alt="cameraOption" class="position-absolute custom-Position w-10 cameraBorder" (click)="openGellary(fileInput)">
-                                <input type="file" accept=".png,.jpg,.jpeg"  style="display: none;" #fileInput (change)="onSelectFile($event)">
-                            </div>
-                        </div>
+                        
                         <div class="personDetailForm">
-                            <form [formGroup]="RegisterForm" (ngSubmit)="saveandContinue()"  class="d-flex flex-column mt-5 pt-5">
-                                <div class="col-12">
+                            <form [formGroup]="RegisterForm" (ngSubmit)="saveAndContinue()"  class="d-flex flex-column ">
+                                <div class="personFace-wrapper mb-5">
+                                    <div class="m-auto col-1 pt-5 mt-4 position-relative">
+                                        <img [src]="url ? url : AvatarImg" alt="PersonFace" class="w-100 position-absolute CustomPosition2" name="myImg" ngDefaultControl #SelectImgAvatar formControlName="validImg" (click)="openGellary(fileInput)">
+                                        <!-- <img src="../../../assets/Vector (1).png" alt="cameraOption" class="position-absolute custom-Position w-10 cameraBorder" (click)="openGellary(fileInput)"> -->
+                                        <input type="file" accept=".png,.jpg,.jpeg"  style="display: none;" #fileInput (change)="onSelectFile($event)">
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-5">
                                     <div class="d-flex flex-column ">
                                         <legend class="col-4 m-auto pb-3 ps-3">Name</legend>
-                                        <input type="text"  formControlName="validUserName" class="customInPut p-2 col-4 m-auto" placeholder="Your Name">
+                                        <input type="text"  formControlName="validUserName" class="customInPut p-2 col-4 m-auto" placeholder="Your Name" >
                                     </div>
                                 </div>
                                 <div class="col-12">
