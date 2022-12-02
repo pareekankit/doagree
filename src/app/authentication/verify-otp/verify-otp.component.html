@@ -20,7 +20,7 @@
                    <div class="mobile-number-wrapper">
                     <h3 class="mobile-number pt-2 m-0 text-center"> Enter the OTP below</h3>
                    </div>
-                   <form [formGroup] ='otpForm' (ngSubmit)="verifyOtp()">
+                   <form [formGroup] ='otpForm'>
                    <div class="d-flex justify-content-center py-3 ">
                     <input type="text" name='otp1' class="otp-Box" maxlength="1" #otp1 (keyup)="move($event,otp1,otp2)" formControlName="otp1">
                     <input type="text" name='otp2' class="otp-Box" maxlength="1" #otp2 (keyup)="move($event,otp1,otp3)" formControlName="otp2">
@@ -28,17 +28,16 @@
                     <input type="text" name='otp4' class="otp-Box" maxlength="1" #otp4 (keyup)="move($event,otp3,'')" formControlName="otp4">
                    </div>
                    <p class="d-flex justify-content-center" style="color: red;">{{invalidOtp}}</p>
-
                    <h3 class="mobile-number pt-2 m-0 text-center">Didn`t Receive OTP?</h3>
-                   <a routerLinkActive="active"  ariaCurrentWhenActive="page" routerLink ="/login" >
-                   <h3 class="mobile-number pt-2 m-0 text-center">Resend OTP</h3>
-                   </a>
+                   <div class="d-flex justify-content-center" >
+                   <button class="mobile-number pt-2 m-0 text-center" (click)="resendOtp()">Resend OTP</button>
+                    </div>
                    <div class="mobile-inputbox">
                     <div class="d-flex pt-3 justify-content-center">
                         </div>
                         <div class="loginBtn">
                             <div class=" pt-3 d-flex pt-3 justify-content-center">
-                                <input type="submit" value="VERIFY & PROCEED" class="btn">
+                                <input type="button" value="VERIFY & PROCEED" class="btn" [disabled]="otpForm.invalid" (click)="verifyOtp($event)">
                                </div>
                            </div>
                         </div>

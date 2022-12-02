@@ -11,22 +11,27 @@
             <div class="d-flex flex-column col-12">
                 <div class="d-flex flex-row justify-content-center pt-5">
                     <div class=" bg-color col-3 ">
-                        <p class="m-0 text-center">Hindi</p>
+                        <label class="m-0 text-center">Hindi:</label>
                     </div>
                     <div class="col-3 position-relative">
-                        <img class="position-absolute" src="/assets/Ellipse 47.png" alt="">
-                        <img class="position-absolute customPosition" src="/assets/Line 1.png" alt="">
+                        <input type="radio" name="language" value="hi" (click)="setRadio('Hindi')" [checked]="true">
+                        <!-- <img class="position-absolute" src="/assets/Ellipse 47.png" alt="">
+                        <img class="position-absolute customPosition" src="/assets/Line 1.png" alt=""> -->
                     </div>
                 </div>
                 <div class="d-flex flex-row justify-content-center pt-5">
                     <div class="bg-color col-3 ">
-                        <p class="m-0 text-center">English</p>
+                        <label class="m-0 text-center">English:</label>
                     </div>
                     <div class="col-3 position-relative">
-                        <img class="position-absolute" src="/assets/Ellipse 47.png" alt="">
-                        <img class="position-absolute customPosition" src="/assets/Line 1.png" alt="">
+                        <input type="radio" name="language" value="en" (click)="setRadio('English')">
+                        <!-- <img class="position-absolute" src="/assets/Ellipse 47.png" alt="">
+                        <img class="position-absolute customPosition" src="/assets/Line 1.png" alt=""> -->
                     </div>
                 </div>
+                <!-- <div *ngIf="f.language.touched && f.language.invalid" class="alert alert-danger">
+                    <div *ngIf="f.language.errors.required">Select language</div>
+                </div> -->
             </div>
             <div class="d-flex justify-content-center col-12 pt-5">
                 <a routerLink="/login"></a>
