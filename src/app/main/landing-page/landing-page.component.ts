@@ -8,7 +8,6 @@ import { ApiCallMethodsService } from 'src/app/services/api-call-methods.service
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
-  personName:any='Mukesh-K-Sardiwal';
   baseApiDataUrl:any;
   youtube_link:any;
   bannerImg:any;
@@ -27,10 +26,14 @@ export class LandingPageComponent implements OnInit {
   recommondedPostName:any;
   referOrEarn:any;
   referOrEarnData:any;
+  loginPersonName:any='';
   constructor(private apiMethod:ApiCallMethodsService,private router:Router) { 
-
+    apiMethod.get(apiRoutes.getProfile).then((response:any)=>{
+      // console.log(response.data.name)
+      this.loginPersonName=response.data.name;
+    });
     this.apiMethod.get(apiRoutes.main+""+'?language=en&longitude=88.259499&latitude=22.508421').then((Response:any)=>{
-      console.log(Response);
+      // console.log(Response);
       this.youtube_link=Response.data.find((el:any)=>(el.module_name_check=='youtube_link')).section_data[0].link_selected;
       this.bannerImg_link=Response.data.find((el:any)=>(el.module_name_check=='hero_banners')).section_data[1].banner;
       this.sellAnimal=Response.data.find((el:any)=>(el.module_name_check=='hero_banners')).section_data

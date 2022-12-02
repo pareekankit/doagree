@@ -19,9 +19,10 @@
                             <form [formGroup]="RegisterForm" (ngSubmit)="saveAndContinue()"  class="d-flex flex-column ">
                                 <div class="personFace-wrapper mb-5">
                                     <div class="m-auto col-1 pt-5 mt-4 position-relative">
-                                        <img [src]="url ? url : AvatarImg" alt="PersonFace" class="w-100 position-absolute CustomPosition2" name="myImg" ngDefaultControl #SelectImgAvatar formControlName="validImg" (click)="openGellary(fileInput)">
+                                        <img [src]="url ? url : AvatarImg" alt="PersonFace" class="w-100 position-absolute CustomPosition2" name="myImg"  #SelectImgAvatar  (click)="openGellary(fileInput)">
+                                        <!-- <img [src]="url ? url : AvatarImg" alt="PersonFace" class="w-100 position-absolute CustomPosition2" name="myImg" ngDefaultControl #SelectImgAvatar  (click)="openGellary(fileInput)"> -->
                                         <!-- <img src="../../../assets/Vector (1).png" alt="cameraOption" class="position-absolute custom-Position w-10 cameraBorder" (click)="openGellary(fileInput)"> -->
-                                        <input type="file" accept=".png,.jpg,.jpeg"  style="display: none;" #fileInput (change)="onSelectFile($event)">
+                                        <input type="file" class="form-control" accept=".png,.jpg,.jpeg" formControlName="file" style="display: none;" #fileInput (change)="onFileChange($event)">
                                     </div>
                                 </div>
                                 <div class="col-12 mt-5">
@@ -45,7 +46,8 @@
                                 <div class="col-12">
                                     <div class="d-flex flex-column ">
                                         <legend class="col-4 m-auto pb-3 ps-3 pt-4">Gender</legend>
-                                        <select formControlName="validGender" #Gender (change)="checkGender(SelectImgAvatar)" class="customInPut p-2 col-4 m-auto">
+                                        <!-- <select formControlName="validGender" #Gender (change)="checkGender(SelectImgAvatar)" class="customInPut p-2 col-4 m-auto"> -->
+                                            <select formControlName="validGender" #Gender class="customInPut p-2 col-4 m-auto">
                                             <option value="Male" ngSelect>Male</option>
                                             <option value="Female">Female</option>
                                           </select>    
