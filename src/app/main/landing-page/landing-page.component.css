@@ -164,6 +164,7 @@ li {
   left: 0; */
   width: min(50vw, 350px);
   display: inline-block;
+  vertical-align: bottom;
   /* text-align: center; */
   background-color: #fff8e8;
   color: #9b9dad;
@@ -229,6 +230,7 @@ color: #366315;
     left: 0; */
     width: min(50vw, 250px);
     display: inline-block;
+    vertical-align: bottom;
     /* text-align: center; */
     background-color: #fff8e8;
     color: #9b9dad;
@@ -290,4 +292,12 @@ color: #366315;
     }
     .border-one{
         border: 1px solid #29A71A;
+    }
+    .custom-Width{
+        width: 75px !important;
+        height: 75px !important;
+    }
+    .custom-wid-for-Animal{
+        width: 75px !important;
+        height: 75px !important;
     }
