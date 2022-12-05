@@ -12,10 +12,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class ProfileComponent implements OnInit {
   url:any;
-  AvatarImg:any;
+  AvatarImg:any='/assets/Ellipse 94.png';
   imgFlag:number=0;
-  signModalDataService:any;
-  mobileNo:any;
+  
+  @ViewChild('Gender') Gender!: ElementRef;
+
+  
   constructor(private apiCallMethod:ApiCallMethodsService,private sanitizer: DomSanitizer,private Route:ActivatedRoute,private router:Router) {
     apiCallMethod.get(apiRoutes.getProfile).then((response:any)=>{
       console.log(response.data)
@@ -27,16 +29,12 @@ export class ProfileComponent implements OnInit {
          validGender:response.data.gender,
          validOccupation:response.data.occupation,
          vaildMobileNo:response.data.phone,
-         validImg:response.data.image,
-         file:'',
-        },
-        
+        },  
       )
 
     })
    
   }
-
   RegisterForm=new FormGroup({
     validUserName: new FormControl('',[Validators.required]),
     validAge: new FormControl('',[Validators.required]),
@@ -44,44 +42,37 @@ export class ProfileComponent implements OnInit {
     validGender:new FormControl('',[Validators.required]),
     validOccupation: new FormControl('',[Validators.required]),
     vaildMobileNo:new FormControl(''),
-    validImg: new FormControl(''),
-    file: new FormControl('')
   });
   
  
-  @ViewChild('Gender') Gender!: ElementRef;
 
-	// checkGender(SelectImgAvatar:any):void 
-  //     {
-
-  //       if(this.imgFlag==0)
-  //       {
-  //         if(this.Gender.nativeElement.value=='Male'){
-  //           SelectImgAvatar.src='../../../assets/Ellipse 94.png';
-  //         }
-  //         else{
-  //           SelectImgAvatar.src='../../../assets/Femalee-farmer 2.png';
-  //         }
-  //       }
-  //     }
+	checkGender(SelectImgAvatar:any):void 
+      {
+        if(this.imgFlag==0)
+        {
+          if(this.Gender.nativeElement.value=='Male'){
+            SelectImgAvatar.src='/assets/Ellipse 94.png';
+          }
+          else{
+            SelectImgAvatar.src='/assets/Femalee-farmer 2.png';
+          }
+        }
+      }
   
   goOnLoginPage(){
         this.router.navigate(['/login']);
       }
-  saveAndContinue()
+  saveAndContinue(event:any)
       {
-        this.Route.params.subscribe((params:any)=>{
-          this.mobileNo=params.No;
-        })
+          event.target.disable='true';
           let data : any = {
             name:this.RegisterForm.value.validUserName,
             picture:this.AvatarImg,
             gender:this.RegisterForm.value.validGender,
             age:this.RegisterForm.value.validAge,
             reference_code:this.RegisterForm.value.validReferalCode,
-            mobile_no:this.mobileNo,
+            mobile_no:this.RegisterForm.value.vaildMobileNo,
             occupation:this.RegisterForm.value.validOccupation
-
           } 
           this.apiCallMethod.post(apiRoutes.profile,data).
           then((response:any)=>{
@@ -91,34 +82,28 @@ export class ProfileComponent implements OnInit {
             console.log(error);
           })
       }
-  openGellary(fileInput:HTMLInputElement)
+      openGellary(fileInput:HTMLInputElement)
       {
         fileInput.click();
         console.log(fileInput)
       }
-  // onSelectFile(event:any) {
-  //     if (event.target.files && event.target.files[0]) 
-  //     {
+      onSelectFile(event:any) {
+          if (event.target.files && event.target.files[0]) 
+          {
 
-  //           var reader = new FileReader();
+                var reader = new FileReader();
 
-  //           reader.readAsDataURL(event.target.files[0]);
+                reader.readAsDataURL(event.target.files[0]);
 
-  //           reader.onload = (event:any) => 
-  //           { 
-  //              this.url = event.target.result;
-  //              this.imgFlag=1;
-  //           }
-  //     }
-  // }
-  onFileChange(event:any) {
-    if (event.target.files.length > 0) {
-      const file = event.target.files[0];
-      this.RegisterForm.patchValue({
-        validImg: file
-      });
-    }
-  }
+                reader.onload = (event:any) => 
+                { 
+                  this.url = event.target.result;
+                  this.imgFlag=1;
+                }
+          }
+      }
+  
+  
   ngOnInit(): void {
   }
 
