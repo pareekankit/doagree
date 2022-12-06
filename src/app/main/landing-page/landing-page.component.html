@@ -31,17 +31,17 @@
   
   <section>
   <div class="personWelcome-wrapper">
-    <div class="container">
+    <div class="container p-0">
         <div class="welcome-Heading">
             <div class="d-flex col-12 px-3 pt-4">
                 <div class="col-8">
                     <div class="d-flex flex-column">
-                        <h3 class="welcome-heading">Welcome {{ loginPersonName  }}</h3>
+                        <h3 class="welcome-heading" *ngIf="sectionData.loginPersonDetail">Welcome {{sectionData.loginPersonDetail}}</h3>
                         <p class="welcome-text">What would you like to do today ?</p>
                     </div>
                 </div>
-                <div class="col-4 d-flex justify-content-end pe-2">
-                    <a [href]="youtube_link" target="_blank">
+                <div class="col-4 d-flex justify-content-end pe-2" *ngIf="sectionData.youtube_link">
+                    <a [href]="link.link_selected" target="_blank" *ngFor="let link of sectionData.youtube_link">
                         <img src="/assets/youtube.png" (error)="setImg($event)"  alt="youtubeIcon" class="youtubeIconWidth">
                     </a>
                 </div>
@@ -52,10 +52,10 @@
   </section>
   <section>
   <div class="banner-carusal-wrapper">
-    <div class="container px-0">
-        <div class="bg-banner "  [ngStyle]="{'background-image': 'url(' + bannerImg + ')'}">
+    <div class="container " *ngIf="sectionData.baseApiDataUrl">
+        <div class="bg-banner "  [ngStyle]="{'background-image': 'url(' + sectionData.baseApiDataUrl+sectionData.hero_banners + ')'}">
             <div class="d-flex justify-content-center align-items-center pt-5 ">
-                <button class="custom-btn mt-5" [title]="sellAnimal">{{sellAnimal}}</button>
+                <button class="custom-btn mt-5" [title]="sectionData.banner_btn">{{sectionData.banner_btn}}</button>
             </div>
         </div>
     </div>
@@ -67,7 +67,7 @@
         <div class="d-flex flex-column">
             <div class="d-flex flex-row pt-4">
                 <div class="col-6">
-                    <h3 class="text-start text-color location-style">{{locationName}}</h3>
+                    <h3 class="text-start text-color location-style"  *ngIf="sectionData.ads_location_wise">{{sectionData.ads_location_wise.display_name}}</h3>
                     <p class="text-start text-color ads-time-style pt-3"> last {{24}} hours-{{120}} ads</p>                        
                 </div>
                 <div class="col-6 text-end">
@@ -179,8 +179,8 @@
   <section>
     <div class="farmer-income-wrapper">
         <div class="container">
-            <div class="d-flex col-12 pt-4 " >
-                <img [src]="safetyTips" alt="" class="w-100">
+            <div class="d-flex col-12 pt-4 " *ngIf="sectionData.baseApiDataUrl">
+                <img [src]="sectionData.baseApiDataUrl+sectionData.safetyTips_link" alt="" class="w-100">
             </div>
         </div>
     </div>
@@ -196,9 +196,9 @@
             <div class="overflow-hidden d-flex custom-width">
                 
                 <ul class="pt-3 ulpersonscroll">
-                    <li class="box-shadow me-3 my-2 lipseronscroll" *ngFor="let person of recommenderSeller;let i=index;">
-                        <div class="w-25 m-auto pt-3">
-                            <img src="{{baseApiDataUrl+person.image}}" (error)="setImg($event)" alt="" class="custom-Width img-border-top customimg-scroll" >
+                    <li class="box-shadow me-3 my-2 lipseronscroll" *ngFor="let person of sectionData.recommended_sellers;let i=index;">
+                        <div class="w-25 m-auto pt-3" *ngIf="sectionData.baseApiDataUrl">
+                            <img src="{{sectionData.baseApiDataUrl+person.image}}" (error)="setImg($event)" alt="" class="custom-Width img-border-top customimg-scroll" >
                         </div>
                         <div class="d-flex flex-column justify-content-between">
                             <h3 class="personName">{{person.name}}</h3>
@@ -224,7 +224,7 @@
         <div class="d-flex flex-column">
             <div class="d-flex col-12 flex-row ">
                   <div class="col-6">
-                    <h3 class="Dairy-heading text-color text-start pt-4">{{dairyPassBook}}</h3>
+                    <h3 class="Dairy-heading text-color text-start pt-4" >Dairy Passbook</h3>
                   </div>
                   <div class="col-6 text-end pt-4">
                     <a class="text-color password-style ">Password >></a>
@@ -237,7 +237,7 @@
                     </div>
                     <div>
                         <p class="money-head text-color">Total Revenue</p>
-                        <p class="money-value text-color"> ₹ {{dairyPassExpense}} </p>
+                        <p class="money-value text-color" *ngFor="let value of sectionData.dairyPassBook"> ₹ {{value.revenue}}</p>
                     </div>
                 </div>
                 <div class="d-flex flex-row col-4 justify-content-center mt-3 pt-4 pb-2 px-4 second-bg borderRight-side">
@@ -246,7 +246,7 @@
                     </div>
                     <div>
                         <p class="money-head  red-color">Total Expense</p>
-                        <p class="money-value red-color"> ₹ {{dairyPassExpense}} </p>
+                        <p class="money-value red-color" *ngFor="let value of sectionData.dairyPassBook"> ₹ {{value.expense}}</p>
                     </div>
                 </div>
             </div>
@@ -259,10 +259,10 @@
     <div class="container">
         <div class="d-flex flex-column">
             <div>
-                <h3 class="Dairy-heading text-color text-start pt-4">{{animalWantToBuyName}}</h3>
+                <h3 class="Dairy-heading text-color text-start pt-4" *ngIf="sectionData.animal_buy">{{sectionData.animal_buy.display_name}}</h3>
             </div>
-            <div class="d-flex flex-row justify-content-center">
-                <a class="col-2 d-flex flex-column pt-4  justify-content-center" *ngFor="let animal of animalWantToBuy;">
+            <div class="d-flex flex-row justify-content-center " *ngIf="sectionData.animal_buy">
+                <a class="col-2 d-flex flex-column pt-4  justify-content-center"  *ngFor="let animal of sectionData.animal_buy.section_data;">
                     <div class="align-self-center w-25">
                         <img src="{{animal.image}}" alt="" class="custom-wid-for-Animal">
                     </div>
@@ -282,8 +282,7 @@
         <div class="d-flex flex-column">
             <div class="d-flex flex-row pt-4">
                 <div class="col-6">
-                    <h3 class="text-start text-color location-style">{{recommondedPostName}}</h3>
-                                           
+                    <h3 class="text-start text-color location-style" *ngIf="sectionData.recommended_feed">{{sectionData.recommended_feed.display_name}}</h3>        
                 </div>
                 <div class="col-6 text-end">
                     <p class="text-color Explore-ads-style">Explore Feeds >></p>
@@ -292,10 +291,10 @@
             <div class="ads-card-wrapper">
                     <div class="overflow-hidden d-flex custom-width">
                         
-                        <ul class="pt-3 ">
-                            <li class="box-shadow me-3 my-2 p-3" *ngFor="let post of recommondedPost">
+                        <ul class="pt-3 " *ngIf="sectionData.recommended_feed">
+                            <li class="box-shadow me-3 my-2 p-3" *ngFor="let post of sectionData.recommended_feed.section_data">
                                 <div class="w-25 m-auto pt-4">
-                                    <img src="{{baseApiDataUrl}}{{post.created_by.image
+                                    <img src="{{sectionData.baseApiDataUrl}}{{post.created_by.image
                                     }}" (error)="setImg($event)" alt="" class="custom-Width img-border-top customimg-scroll" >
                                 </div>
                                 <div class="d-flex flex-column px-2">
@@ -327,13 +326,13 @@
                 <img src="/assets/Talk to expert (3) 1.svg" alt="">
             </div>
             <div class="col-5 d-flex flex-column ">
-                <div class="d-flex flex-row justify-content-end">
+                <div class="d-flex flex-row justify-content-end"  *ngIf="sectionData.refer_and_earn">
                     <span><img src="/assets/Rectangle 103.png" alt="" class="px-2"></span>
-                    <span>{{ referOrEarnData}}</span>
+                    <span   *ngFor="let value of sectionData.refer_and_earn.section_data">{{ value.points}}</span>
                 </div>
                 <div>
-                    <h3 class="text-color ">
-                        {{referOrEarn}}
+                    <h3 class="text-color " *ngIf="sectionData.refer_and_earn" >
+                        {{ sectionData.refer_and_earn.display_name}}
                     </h3>
                 </div>
                 <div>
