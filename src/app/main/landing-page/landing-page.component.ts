@@ -9,8 +9,7 @@ import { ApiCallMethodsService } from 'src/app/services/api-call-methods.service
 })
 export class LandingPageComponent implements OnInit {
 
-    sectionData:any={
-
+  sectionData:any={
                     baseApiDataUrl:null,
                     loginPersonDetail:null,
                     hero_banners:null,
@@ -26,71 +25,58 @@ export class LandingPageComponent implements OnInit {
 
                     }
 
-
   constructor(private apiMethod:ApiCallMethodsService,private router:Router) { 
       
-
       apiMethod.get(apiRoutes.getProfile).then((response:any)=>{
-
-              this.sectionData.loginPersonDetail=response.data.name;
+                    this.sectionData.loginPersonDetail=response.data.name;
 
       });
     
-    
       apiMethod.get(apiRoutes.main+""+'?language=en&longitude=88.259499&latitude=22.508421').then((Response:any)=>{
               
-            this.sectionData.baseApiDataUrl =Response.base_url;
-             console.log(Response)
-            Response.data.forEach((el:any) => {
-               
-                if(el.module_name_check=="youtube_link"){
-                          console.log(el.section_data)
-                          this.sectionData.youtube_link=el.section_data
-                }
-
-                if(el.module_name_check=='hero_banners'){
-
-                          this.sectionData.hero_banners=el.section_data[1].banner;
-                          this.sectionData.banner_btn=el.section_data[0].title;
-                }
-               
-                if(el.module_name_check=='recommended_sellers'){
-
-                          this.sectionData.recommended_sellers=el.section_data
-                }
-               
-                if(el.module_name_check=='safety_tips'){
-
-                          this.sectionData.safetyTips_link=el.section_data.find((vl:any)=>(vl.title=='Safety Tips')).banner;
-                }
-               
-                if(el.module_name_check=='dairy_passbook'){
+                    this.sectionData.baseApiDataUrl =Response.base_url;
+                    Response.data.forEach((el:any) => {
                       
-                          this.sectionData.dairyPassBook=el.section_data;
-                } 
-               
-                if(el.module_name_check=='product_filters'){
+                          if(el.module_name_check=="youtube_link"){
+                                    console.log(el.section_data)
+                                    this.sectionData.youtube_link=el.section_data
+                          }
+                          if(el.module_name_check=='hero_banners'){
 
-                          this.sectionData.animal_buy=el;
-                }
-               
-                if(el.module_name_check=="recommended_feed"){
+                                    this.sectionData.hero_banners=el.section_data[1].banner;
+                                    this.sectionData.banner_btn=el.section_data[0].title;
+                          }
+                          if(el.module_name_check=='recommended_sellers'){
 
-                          this.sectionData.recommended_feed=el;
-                }  
-               
-                if(el.module_name_check=="refer_and_earn"){
-                  
-                          this.sectionData.refer_and_earn=el;
-                }   
-               
-                if(el.module_name_check=='ads_location_wise'){
+                                    this.sectionData.recommended_sellers=el.section_data
+                          }
+                          if(el.module_name_check=='safety_tips'){
 
-                          this.sectionData.ads_location_wise=el;
-                }   
-              
-            });
-      })
+                                    this.sectionData.safetyTips_link=el.section_data.find((vl:any)=>(vl.title=='Safety Tips')).banner;
+                          }
+                          if(el.module_name_check=='dairy_passbook'){
+                                
+                                    this.sectionData.dairyPassBook=el.section_data;
+                          } 
+                        
+                          if(el.module_name_check=='product_filters'){
+
+                                    this.sectionData.animal_buy=el;
+                          }
+                          if(el.module_name_check=="recommended_feed"){
+
+                                    this.sectionData.recommended_feed=el;
+                          }  
+                          if(el.module_name_check=="refer_and_earn"){
+                            
+                                    this.sectionData.refer_and_earn=el;
+                          }   
+                          if(el.module_name_check=='ads_location_wise'){
+
+                                    this.sectionData.ads_location_wise=el;
+                          }   
+                    });
+      });
     
   }
 
@@ -98,21 +84,18 @@ export class LandingPageComponent implements OnInit {
   }
      
   getProfileData(){
-
       this.router.navigate(['/profile',]);
 
   }
 
 
   setImg(event:any){
-
       return event.target.src='assets/Ellipse 94.png';
 
   }
 
 
   logOut(){
-
       let data ={};
            this.apiMethod.post(apiRoutes.logOut,data)
             .then((response: any) => {
@@ -125,8 +108,6 @@ export class LandingPageComponent implements OnInit {
                 console.log(error);
            })
 
-      }
-
-
+  }
  
 }
