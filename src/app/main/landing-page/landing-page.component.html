@@ -40,8 +40,8 @@
                         <p class="welcome-text">What would you like to do today ?</p>
                     </div>
                 </div>
-                <div class="col-4 d-flex justify-content-end pe-2">
-                    <a [href]="youtube_link" target="_blank">
+                <div class="col-4 d-flex justify-content-end pe-2" *ngIf="sectionData.youtube_link">
+                    <a [href]="link.link_selected" target="_blank" *ngFor="let link of sectionData.youtube_link">
                         <img src="/assets/youtube.png" (error)="setImg($event)"  alt="youtubeIcon" class="youtubeIconWidth">
                     </a>
                 </div>

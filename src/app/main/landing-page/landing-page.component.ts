@@ -26,8 +26,6 @@ export class LandingPageComponent implements OnInit {
 
                     }
 
-       youtube_link:any;
-
 
   constructor(private apiMethod:ApiCallMethodsService,private router:Router) { 
       
@@ -42,9 +40,14 @@ export class LandingPageComponent implements OnInit {
       apiMethod.get(apiRoutes.main+""+'?language=en&longitude=88.259499&latitude=22.508421').then((Response:any)=>{
               
             this.sectionData.baseApiDataUrl =Response.base_url;
-             
+             console.log(Response)
             Response.data.forEach((el:any) => {
                
+                if(el.module_name_check=="youtube_link"){
+                          console.log(el.section_data)
+                          this.sectionData.youtube_link=el.section_data
+                }
+
                 if(el.module_name_check=='hero_banners'){
 
                           this.sectionData.hero_banners=el.section_data[1].banner;
@@ -118,7 +121,7 @@ export class LandingPageComponent implements OnInit {
               this.router.navigate(['/login']);
 
               }).catch((error:any)=>{
-                
+
                 console.log(error);
            })
 
