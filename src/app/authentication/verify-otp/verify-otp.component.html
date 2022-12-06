@@ -4,13 +4,14 @@
             <div class="py-5">
                 <div class="d-flex flex-column">
                     <div class="Imgwrapper">
-                        <a href="login">
+                        <a routerLinkActive="active" ariaCurrentWhenActive="page" routerLink="/login">
                             <img src="../../../assets/Vector 9.png" alt="BackTriangle">
                         </a>
                     </div>
                     <div class="headingcontent">
                         <h3 class="pt-2 m-0 phone-heading text-center">Verify Mobile Number</h3>
-                        <p class="pt-2 m-0 phone-text text-center">We have Sent a Verification OTP to Registered Mobile No. </p>
+                        <p class="pt-2 m-0 phone-text text-center">We have Sent a Verification OTP to Registered Mobile
+                            No. </p>
                     </div>
                     <div class="welcome-person-img">
                         <div class="w-40 m-auto pt-5">
@@ -22,28 +23,23 @@
                     </div>
                     <form [formGroup]='otpForm'>
                         <div class="d-flex justify-content-center py-3 ">
-                            <input type="text" name='otp1' class="otp-Box" maxlength="1" #otp1
-                                (keyup)="move($event,otp1,otp2)" formControlName="otp1">
-                            <input type="text" name='otp2' class="otp-Box" maxlength="1" #otp2
-                                (keyup)="move($event,otp1,otp3)" formControlName="otp2">
-                            <input type="text" name='otp3' class="otp-Box" maxlength="1" #otp3
-                                (keyup)="move($event,otp2,otp4)" formControlName="otp3">
-                            <input type="text" name='otp4' class="otp-Box" maxlength="1" #otp4
-                                (keyup)="move($event,otp3,'')" formControlName="otp4">
+                            <input type="text" name='otp1' class="otp-Box" maxlength="1" #otp1 (keyup)="move($event,otp1,otp2)" formControlName="otp1">
+                            <input type="text" name='otp2' class="otp-Box" maxlength="1" #otp2 (keyup)="move($event,otp1,otp3)" formControlName="otp2">
+                            <input type="text" name='otp3' class="otp-Box" maxlength="1" #otp3 (keyup)="move($event,otp2,otp4)" formControlName="otp3">
+                            <input type="text" name='otp4' class="otp-Box" maxlength="1" #otp4 (keyup)="move($event,otp3,'')" formControlName="otp4">
                         </div>
                         <p class="d-flex justify-content-center" style="color: red;">{{invalidOtp}}</p>
+                        <h3 class="mobile-number pt-2 m-0 text-center">Didn`t Receive OTP?</h3>
                         <div class="d-flex justify-content-center">
-                            <h3 class="mobile-number pt-2 m-0 text-center">Didn`t Receive OTP?</h3>
-                            <button *ngIf="seconds_left<=0" style="font-weight: 800; cursor: pointer;" class="mobile-number pt-2 m-0 text-center" (click)="resendOtp()">Resend OTP</button>
-                            <p> {{id}} </p>
+                            <button *ngIf="seconds_left<=0" style="font-weight: 800;" class="mobile-number pt-2 m-0 text-center button" (click)="resendOtp()">ResendOTP</button>
+                            <p class="pt-2"> {{timer}} </p>
                         </div>
                         <div class="mobile-inputbox">
                             <div class="d-flex pt-3 justify-content-center">
                             </div>
                             <div class="loginBtn">
                                 <div class=" pt-3 d-flex pt-3 justify-content-center">
-                                    <input type="button" value="VERIFY & PROCEED" class="btn"
-                                        [disabled]="otpForm.invalid" (click)="verifyOtp($event)">
+                                    <input type="button" value="VERIFY & PROCEED" class="button" [disabled]="otpForm.invalid" (click)="verifyOtp($event)">
                                 </div>
                             </div>
                         </div>

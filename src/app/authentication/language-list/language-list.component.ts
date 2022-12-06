@@ -1,5 +1,5 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CheckboxRequiredValidator, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { apiRoutes } from 'src/app/constants/apiRoutes';
 import { ApiCallMethodsService } from 'src/app/services/api-call-methods.service';
@@ -13,29 +13,33 @@ import { ApiCallMethodsService } from 'src/app/services/api-call-methods.service
 export class LanguageListComponent implements OnInit {
   hindi:any;
   english:any;
+  select:any;
   
-  constructor(private apiCallMethod: ApiCallMethodsService, private router:Router) {
-    apiCallMethod.get(apiRoutes.language).then((response: any) => {
+  constructor(private apiCallMethod: ApiCallMethodsService, private router:Router) 
+  {
+    apiCallMethod.get(apiRoutes.language).then((response: any)=>
+    {
       console.log(response.data);
-      this.hindi = localStorage.setItem('code', response.data[0].code);
-      this.english = localStorage.setItem('code', response.data[0].code);
+      this.hindi = response.data[1].code;
+      // console.log(this.hindi);    
+      this.english = response.data[0].code;
+      // console.log(this.english); 
     });
-
-  }
- setRadio(e:any):void{
-  // this.select = e;
- }
-//  isSelected(language:any): any{
-//   if (!this.select) { // if no radio button is selected, always return false so every nothing is shown  
-//     return false;  
-// }  
-//   return (this.select===language); // if current radio button is selected, return true, else return false  
-
-//  }
-
-  nextToLogin() {
-    this.router.navigate(['/login']);
   }
 
   ngOnInit(): void {}
+
+  setRadio(e:any){
+    if(e==this.hindi){
+      localStorage.setItem('code',this.hindi);
+    }
+    else
+    {
+      localStorage.setItem('code',this.english);
+    }
+   }
+
+  nextToLogin(): void {
+    this.router.navigate(['/login']);
+  }
 }
