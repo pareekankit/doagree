@@ -15,14 +15,14 @@
                             <h3 class="HeadingText pt-3">Your Information</h3>
                         </div>
                         <div class="personFace-wrapper">
-                            <div class="m-auto col-1 pt-5 mt-4 position-relative">
+                            <div class="m-auto col-1 pb-5 mb-5 position-relative">
                                 <img [src]="url ? url : AvatarImg" alt="PersonFace" class="w-100 position-absolute CustomPosition2" name="myImg" ngDefaultControl #SelectImgAvatar [(ngModel)]="AvatarImg">
                                 <img src="../../../assets/Vector (1).png" alt="cameraOption" class="position-absolute custom-Position w-10 cameraBorder" (click)="openGellary(fileInput)">
                                 <input type="file" accept=".png,.jpg,.jpeg"  style="display: none;" #fileInput (change)="onSelectFile($event)">
                             </div>
                         </div>
                         <div class="personDetailForm">
-                            <form [formGroup]="RegisterForm" (ngSubmit)="saveandContinue()"  class="d-flex flex-column mt-5 pt-5">
+                            <form [formGroup]="RegisterForm"   class="d-flex flex-column mt-5 pt-5">
                                 <div class="col-12">
                                     <div class="d-flex flex-column ">
                                         <legend class="col-4 m-auto pb-3 ps-3">Name</legend>
@@ -44,8 +44,9 @@
                                 <div class="col-12">
                                     <div class="d-flex flex-column ">
                                         <legend class="col-4 m-auto pb-3 ps-3 pt-4">Gender</legend>
-                                        <select formControlName="validGender" #Gender (change)="checkGender(SelectImgAvatar)" class="customInPut p-2 col-4 m-auto">
-                                            <option value="Male" ngSelect>Male</option>
+                                        <!-- <select formControlName="validGender" #Gender  title="Gender" class="customInPut p-2 col-4 m-auto"> -->
+                                        <select formControlName="validGender" #Gender (change)="checkGender(SelectImgAvatar)" title="Gender" class="customInPut p-2 col-4 m-auto">
+                                            <option value="Male" >Male</option>
                                             <option value="Female">Female</option>
                                           </select>    
                                     </div>
@@ -54,12 +55,12 @@
                                 <div class="col-12 backGround-color">
                                     <div class="d-flex flex-column ">
                                         <legend class="col-4 m-auto pb-3 ps-3 pt-4">Have Referral Code ?</legend>
-                                        <input type="text"  formControlName="validReferalCode" class="customInPut p-2 col-4 m-auto">
+                                        <input type="text" title="Code"  formControlName="validReferalCode" class="customInPut p-2 col-4 m-auto">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="d-flex flex-column ">
-                                        <button class="p-2 mt-5 col-2 m-auto customBtn">Save & Continue</button>
+                                        <button type="button" class="p-2 mt-5 col-2 m-auto customBtn" (click)="saveAndContinue($event)">Save & Continue</button>
                                     </div>
                                 </div>
                             </form>

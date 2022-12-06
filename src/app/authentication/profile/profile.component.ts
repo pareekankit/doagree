@@ -11,82 +11,101 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class ProfileComponent implements OnInit {
-  url:any;
-  AvatarImg:any='../../../assets/Ellipse 94.png';
-  imgFlag:number=0;
-  signModalDataService:any;
-  mobileNo:any;
-  constructor(private apiCallMethod:ApiCallMethodsService,private sanitizer: DomSanitizer,private Route:ActivatedRoute,private router:Router) {
 
-  }
+  url:any;
+  AvatarImg:any='/assets/Ellipse 94.png';
+  imgFlag:number=0;
+  
+  @ViewChild('Gender') Gender!: ElementRef;
 
   RegisterForm=new FormGroup({
+
     validUserName: new FormControl('',[Validators.required]),
     validAge: new FormControl('',[Validators.required]),
     validReferalCode: new FormControl('',[Validators.required]),
     validGender:new FormControl('',[Validators.required]),
-    validOccupation: new FormControl('',[Validators.required])
-  });
- 
-  @ViewChild('Gender') Gender!: ElementRef;
+    validOccupation: new FormControl('',[Validators.required]),
+    vaildMobileNo:new FormControl(''),
+});
 
-	checkGender(SelectImgAvatar:any):void 
-      {
-        console.log(this.imgFlag)
-        if(this.imgFlag==0)
-        {
-            if(this.Gender.nativeElement.value=='Male'){
-            SelectImgAvatar.src='../../../assets/Ellipse 94.png';
-          }
-          else{
-            SelectImgAvatar.src='../../../assets/Femalee-farmer 2.png';
-          }
-        }
-      }
-   
-  saveandContinue()
-      {
-        this.Route.params.subscribe((params:any)=>{
-          this.mobileNo=params.No;
-        })
-          let data : any = {
-            name:this.RegisterForm.value.validUserName,
-            picture:this.AvatarImg,
-            gender:this.RegisterForm.value.validGender,
-            age:this.RegisterForm.value.validAge,
-            reference_code:this.RegisterForm.value.validReferalCode,
-            mobile_no:this.mobileNo,
-            occupation:this.RegisterForm.value.validOccupation
+  
+  constructor(
+              private apiCallMethod:ApiCallMethodsService,
+              private sanitizer: DomSanitizer,
+              private Route:ActivatedRoute,
+              private router:Router
+            ) {
+                apiCallMethod.get(apiRoutes.getProfile).then((response:any)=>{
+      
+                  this.RegisterForm.setValue(
+                  {
+                          validUserName:response.data.name,
+                          validAge:response.data.age,
+                          validReferalCode:response.data.reference_code,
+                          validGender:response.data.gender,
+                          validOccupation:response.data.occupation,
+                          vaildMobileNo:response.data.phone,
+                  }); 
 
-          } 
-          this.apiCallMethod.post(apiRoutes.profile,data).
+                })
+              }
+
+              ngOnInit(): void {}
+
+	checkGender(SelectImgAvatar:any):void{
+          if(this.imgFlag==0)
+          {
+              if(this.Gender.nativeElement.value=='Male'){
+                SelectImgAvatar.src='/assets/Ellipse 94.png';
+              } else{
+                SelectImgAvatar.src='/assets/Femalee-farmer 2.png';
+              }
+          }
+  }
+  
+  goOnLoginPage(){
+      this.router.navigate(['/login']);
+
+  }
+
+  saveAndContinue(event:any){
+      event.target.disable='true';
+
+      let data : any = {
+          name:this.RegisterForm.value.validUserName,
+          picture:this.AvatarImg,
+          gender:this.RegisterForm.value.validGender,
+          age:this.RegisterForm.value.validAge,
+          reference_code:this.RegisterForm.value.validReferalCode,
+          mobile_no:this.RegisterForm.value.vaildMobileNo,
+          occupation:this.RegisterForm.value.validOccupation
+      } 
+
+      this.apiCallMethod.post(apiRoutes.profile,data).
           then((response:any)=>{
-            console.log(response);
-            this.router.navigate(['/geolocation']);
+              console.log(response);
+              this.router.navigate(['/geolocation']);
           }).catch((error:any)=>{
-            console.log(error);
+              console.log(error);
           })
-      }
-  openGellary(fileInput:HTMLInputElement)
-      {
+  }
+
+  openGellary(fileInput:HTMLInputElement){
+
         fileInput.click();
-      }
-  onSelectFile(event:any) {
-      if (event.target.files && event.target.files[0]) 
-      {
+        console.log(fileInput)  
+  }
+     
+  onSelectFile(event:any){
+      if(event.target.files && event.target.files[0]){
+          var reader = new FileReader();
+          reader.readAsDataURL(event.target.files[0]);
 
-            var reader = new FileReader();
-
-            reader.readAsDataURL(event.target.files[0]);
-
-            reader.onload = (event:any) => 
-            { 
-               this.url = event.target.result;
-               this.imgFlag=1;
+            reader.onload = (event:any) =>{ 
+              this.url = event.target.result;
+              this.imgFlag=1;
             }
       }
-  }
-  ngOnInit(): void {
   }
 
 }
