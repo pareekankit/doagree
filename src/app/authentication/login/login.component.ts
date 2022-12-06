@@ -34,9 +34,7 @@ export class LoginComponent implements OnInit {
       mobile_no: this.loginform.value.InputNumber,
     };
 
-    this.apiCallMethod
-      .post(apiRoutes.login, data)
-      .then((response: any) => {
+    this.apiCallMethod.post(apiRoutes.login, data).then((response: any) => {
         console.log(response);
         this.router.navigate(['/verify-otp',data.mobile_no]);
     }).catch((error:any)=>{

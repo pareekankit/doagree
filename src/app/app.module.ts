@@ -12,7 +12,7 @@ import { GeolocationComponent } from './geolocation/geolocation.component';
 @NgModule({
   declarations: [
     AppComponent,
-    GeolocationComponent
+    GeolocationComponent,
   ],
   imports: [
     BrowserModule,
