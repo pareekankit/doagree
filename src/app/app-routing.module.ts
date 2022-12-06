@@ -7,7 +7,8 @@ import { GeolocationComponent } from './geolocation/geolocation.component';
 import { LandingPageComponent } from './main/landing-page/landing-page.component';
 import { LanguageListComponent } from './authentication/language-list/language-list.component';
 
-const routes: Routes = [
+const routes: Routes = 
+[
  {path:'login',component:LoginComponent},
  {path:"profile",component:ProfileComponent},
  {path:'verify-otp/:No',component:VerifyOtpComponent},
@@ -15,8 +16,6 @@ const routes: Routes = [
  {path:'landing-page',component:LandingPageComponent},
  {path:'language-list',component:LanguageListComponent},
  {path:'',redirectTo:'/language-list',pathMatch:'full'},
-
-
 ];
 
 
