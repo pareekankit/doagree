@@ -1,0 +1,40 @@
+.font-color{
+    color: #366315;
+}
+*{
+    font-family: 'Poppins';
+    font-style: normal;
+}
+.fw-400{
+    font-weight: 400;
+}
+.fw-600{
+    font-weight: 600;
+}
+.HeadingText{
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    color: #294A10;
+}
+.accordion-button::after {
+    flex-shrink: 0;
+    width:0px !important;
+    height: 0px !important;
+    margin-left: auto;
+    content: "";
+    background-image: var(--bs-accordion-btn-icon);
+    background-repeat: no-repeat;
+    background-size: var(--bs-accordion-btn-icon-width);
+    transition: var(--bs-accordion-btn-icon-transition);
+}
+.Question-font{
+    font-size: 18px;
+    line-height: 21px;
+    color: #294A10;
+
+}
+.Question-index{
+    background: #FFFFFF;
+    border: 2px solid #294A10;
+}

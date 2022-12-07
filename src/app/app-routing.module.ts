@@ -6,6 +6,7 @@ import { VerifyOtpComponent } from './authentication/verify-otp/verify-otp.compo
 import { GeolocationComponent } from './geolocation/geolocation.component';
 import { LandingPageComponent } from './main/landing-page/landing-page.component';
 import { LanguageListComponent } from './authentication/language-list/language-list.component';
+import { FaqComponent } from './main/Miscellaneous/faq/faq.component';
 
 const routes: Routes = 
 [
@@ -15,7 +16,9 @@ const routes: Routes =
  {path:'geolocation',component:GeolocationComponent},
  {path:'landing-page',component:LandingPageComponent},
  {path:'language-list',component:LanguageListComponent},
- {path:'',redirectTo:'/language-list',pathMatch:'full'},
+//  {path:'',redirectTo:'/language-list',pathMatch:'full'},
+ {path:'faq',component:FaqComponent},
+ {path:'',redirectTo:'/faq',pathMatch:'full'},
 ];
 
 

@@ -7,7 +7,7 @@
                         <div class="BackBtn-wrapper">
                             <div class="col-1">
                                 <a routerLinkActive="active"  ariaCurrentWhenActive="page" routerLink="/login" >
-                                    <img src="../.././../assets/Vector 9.png" alt="Backbtn">
+                                    <img src="/assets/Vector 9.png" alt="Backbtn">
                                 </a>
                             </div>
                         </div>
@@ -17,7 +17,7 @@
                         <div class="personFace-wrapper">
                             <div class="m-auto col-1 pb-5 mb-5 position-relative">
                                 <img [src]="url ? url : AvatarImg" alt="PersonFace" class="w-100 position-absolute CustomPosition2" name="myImg" ngDefaultControl #SelectImgAvatar [(ngModel)]="AvatarImg">
-                                <img src="../../../assets/Vector (1).png" alt="cameraOption" class="position-absolute custom-Position w-10 cameraBorder" (click)="openGellary(fileInput)">
+                                <img src="/assets/Vector (1).png" alt="cameraOption" class="position-absolute custom-Position w-10 cameraBorder" (click)="openGellary(fileInput)">
                                 <input type="file" accept=".png,.jpg,.jpeg"  style="display: none;" #fileInput (change)="onSelectFile($event)">
                             </div>
                         </div>
