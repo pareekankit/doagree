@@ -1,0 +1,43 @@
+<section>
+    <div class="faq-section-wrapper">
+        <div class="container">
+            <div class="d-flex flex-column col-12 pt-5">
+                <div class="BackBtn-wrapper">
+                    <div class="col-1">
+                        <a routerLinkActive="active"  ariaCurrentWhenActive="page" routerLink="/landing-page" >
+                            <img src="/assets/Vector 9.png" alt="Backbtn" class="mb-1">
+                        </a>
+                        <span class="font-color ms-3">FAQ</span>
+                    </div>
+                    <div class="FAQ-wapper">
+                        <h3 class="HeadingText pt-3">Frequently Asked Questions</h3>
+                    </div>
+                </div>
+                <div class="accordion accordion-flush" id="accordionFlushExample" *ngIf="sectionData.askQuestion">
+                    <div class="accordion-item" *ngFor="let Question of sectionData.askQuestion">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <div class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                           <div class="d-flex  col-12">
+                                <div class="me-1">
+                                    <p class="Question-index p-2 rounded-circle">
+                                        {{Question.id}}
+                                    </p>
+                                </div>
+                                <div class=" ms-5 col-6 ">
+                                    <p class="Question-font mb-0 ">{{Question.question_selected}}</p>
+                                </div>  
+                           </div> 
+                        </div>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            {{Question.answer_selected}}
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
