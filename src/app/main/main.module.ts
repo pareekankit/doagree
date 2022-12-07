@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -9,7 +10,9 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     LandingPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
+
 })
 export class MainModule { }

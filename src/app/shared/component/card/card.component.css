@@ -1,0 +1,34 @@
+.text-color{
+    color: #294A10 !important;
+}
+.cow-name{
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 20px;}
+.cow-rate{
+    font-weight: 700;
+    font-size: 29px;
+    line-height: 27px;
+    color: #29A71A;
+    text-align: start;
+} 
+.Detail{
+    font-weight: 500;
+
+font-size: 14px;
+line-height: 12px;
+
+}
+.call-btn{
+    background-color: #0C45D8;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: #0C45D8 1px solid;
+}
+.box-shadow{
+    border-radius: 5px;
+    border: 1px solid #e7cf95;
+}

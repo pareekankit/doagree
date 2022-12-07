@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { apiRoutes } from 'src/app/constants/apiRoutes';
 import { ApiCallMethodsService } from 'src/app/services/api-call-methods.service';
@@ -7,6 +7,7 @@ import { ApiCallMethodsService } from 'src/app/services/api-call-methods.service
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.css']
 })
+
 export class LandingPageComponent implements OnInit {
 
   sectionData:any={
@@ -25,6 +26,10 @@ export class LandingPageComponent implements OnInit {
 
                     }
 
+    value:any='text input';  
+    imgSrc:any='/assets/Rectangle 111.png';
+    animalName:any='Sahiwal Cow';
+    animalRate:any='R 43000';              
   constructor(private apiMethod:ApiCallMethodsService,private router:Router) { 
       
       apiMethod.get(apiRoutes.getProfile).then((response:any)=>{
@@ -109,5 +114,7 @@ export class LandingPageComponent implements OnInit {
            })
 
   }
+
+ 
  
 }
