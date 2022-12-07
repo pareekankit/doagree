@@ -8,7 +8,10 @@ import { ApiCallMethodsService } from 'src/app/services/api-call-methods.service
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
-
+  img='';
+  name='';
+  Follow='Follow';
+  geoLocation='';
   sectionData:any={
                     baseApiDataUrl:null,
                     loginPersonDetail:null,
