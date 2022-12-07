@@ -77,10 +77,11 @@
             <div class="ads-card-wrapper">
                     <div class="overflow-hidden d-flex custom-width">
                         
-                        <ul class="pt-3 ">
+                        <ul class="pt-3 d-flex">
                           
-  
-                            <li class="box-shadow me-3 my-2">
+                            <app-card [imgLink]="imgSrc" [cowName]="animalName" [cowRate]="animalRate" *ngFor="let i of [1,1,1,1,2]" class="w-25 mx-1" ></app-card>
+                            
+                            <!-- <li class="box-shadow me-3 my-2">
                                 <div class="w-100">
                                     <img src="/assets/Rectangle 111.png"(error)="setImg($event)"  alt="" class="w-100 img-border-top customimg-scroll" >
                                 </div>
@@ -96,81 +97,11 @@
                                         <button class="call-btn">Call</button>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
   
-                            <li class="box-shadow me-3 my-2">
-                                <div class="w-100">
-                                    <img src="/assets/Rectangle 111.png" alt="" class="w-100 img-border-top customimg-scroll" >
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex flex-column pt-3 ps-3">
-                                        <h3 class="cow-name text-color py-2">Sahiwal Cow</h3>
-                                        <p class="cow-rate ">R 43000</p>
-                                        <a class="Details text-color ">
-                                            View Details >>
-                                        </a>
-                                    </div>
-                                    <div class="align-self-center me-3">
-                                        <button class="call-btn">Call</button>
-                                    </div>
-                                </div>
-                            </li>
-  
-                            <li class="box-shadow me-3 my-2">
-                                <div class="w-100">
-                                    <img src="/assets/Rectangle 111.png" alt="" class="w-100 img-border-top customimg-scroll" >
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex flex-column pt-3 ps-3">
-                                        <h3 class="cow-name text-color py-2">Sahiwal Cow</h3>
-                                        <p class="cow-rate ">R 43000</p>
-                                        <a class="Details text-color ">
-                                            View Details >>
-                                        </a>
-                                    </div>
-                                    <div class="align-self-center me-3">
-                                        <button class="call-btn">Call</button>
-                                    </div>
-                                </div>
-                            </li>
-  
-                            <li class="box-shadow me-3 my-2">
-                                <div class="w-100">
-                                    <img src="/assets/Rectangle 111.png" alt="" class="w-100 img-border-top customimg-scroll" >
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex flex-column pt-3 ps-3">
-                                        <h3 class="cow-name text-color py-2">Sahiwal Cow</h3>
-                                        <p class="cow-rate ">R 43000</p>
-                                        <a class="Details text-color ">
-                                            View Details >>
-                                        </a>
-                                    </div>
-                                    <div class="align-self-center me-3">
-                                        <button class="call-btn">Call</button>
-                                    </div>
-                                </div>
-                            </li>
-  
-                            <li class="box-shadow me-3 my-2">
-                                <div class="w-100">
-                                    <img src="/assets/Rectangle 111.png" alt="" class="w-100 img-border-top customimg-scroll" >
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex flex-column pt-3 ps-3">
-                                        <h3 class="cow-name text-color py-2">Sahiwal Cow</h3>
-                                        <p class="cow-rate ">R 43000</p>
-                                        <a class="Details text-color ">
-                                            View Details >>
-                                        </a>
-                                    </div>
-                                    <div class="align-self-center me-3">
-                                        <button class="call-btn">Call</button>
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -198,7 +129,7 @@
                 <ul class="pt-3 ulpersonscroll">
                     <li class="box-shadow me-3 my-2 lipseronscroll" *ngFor="let person of sectionData.recommended_sellers;let i=index;">
                         <div class="w-25 m-auto pt-3" *ngIf="sectionData.baseApiDataUrl">
-                            <img src="{{sectionData.baseApiDataUrl+person.image}}" (error)="setImg($event)" alt="" class="custom-Width img-border-top customimg-scroll" >
+                            <img [src]="sectionData.baseApiDataUrl+person.image" (error)="setImg($event)" alt="" class="custom-Width img-border-top customimg-scroll" >
                         </div>
                         <div class="d-flex flex-column justify-content-between">
                             <h3 class="personName">{{person.name}}</h3>
@@ -209,8 +140,6 @@
                             </a>
                         </div>
                     </li>
-  
-                    
                 </ul>
         </div>
     </div>
@@ -348,3 +277,9 @@
     </div>
   </div>
   </section>
+  <div class="d-flex flex-wrap col-12">
+    <!-- <app-card class="col-3"  *ngFor="let i of [1,1,1,1,2]"  [title]="'dfsdf'" ></app-card> -->
+    <app-card class="col-3" [src]="value" ></app-card>
+
+  </div>
+  
