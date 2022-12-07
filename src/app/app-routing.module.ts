@@ -6,15 +6,17 @@ import { VerifyOtpComponent } from './authentication/verify-otp/verify-otp.compo
 import { GeolocationComponent } from './geolocation/geolocation.component';
 import { LandingPageComponent } from './main/landing-page/landing-page.component';
 import { LanguageListComponent } from './authentication/language-list/language-list.component';
+import { BuyAnimalComponent } from './main/buy-animal/buy-animal.component';
 
 const routes: Routes = 
 [
+ {path:'language-list',component:LanguageListComponent},
  {path:'login',component:LoginComponent},
  {path:"profile",component:ProfileComponent},
  {path:'verify-otp/:No',component:VerifyOtpComponent},
  {path:'geolocation',component:GeolocationComponent},
  {path:'landing-page',component:LandingPageComponent},
- {path:'language-list',component:LanguageListComponent},
+ {path:'buy-animal',component:BuyAnimalComponent},
  {path:'',redirectTo:'/language-list',pathMatch:'full'},
 ];
 

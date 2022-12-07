@@ -1,0 +1,35 @@
+.logoText
+{   
+    display: inline-block;
+    width: 40px;
+    height: 32px;
+    left: 7px;
+    top: 52px;
+    font-family: 'Abril Fatface';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    color: #366315;
+}
+
+.bg-color{
+    background-color: #EDF4E8;
+}
+
+.bg-color1{
+    background-color: #366315;
+}
+
+.box-value{
+        box-sizing: border-box;
+        width: 166px;
+        height: 32px;
+        left: 196px;
+        top: 149px;
+        background: #FFFFFF;
+        border: 1px solid #366315;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+}
