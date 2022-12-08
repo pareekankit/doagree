@@ -8,10 +8,14 @@ import { ApiCallMethodsService } from 'src/app/services/api-call-methods.service
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
-  img='';
-  name='';
-  Follow='Follow';
-  geoLocation='';
+ userData:any=
+ {
+  image:'',
+  name:'',
+  city:'',
+  state:'',
+}
+follow="Follow"
   sectionData:any={
                     baseApiDataUrl:null,
                     loginPersonDetail:null,
@@ -32,6 +36,8 @@ export class LandingPageComponent implements OnInit {
       
       apiMethod.get(apiRoutes.getProfile).then((response:any)=>{
                     this.sectionData.loginPersonDetail=response.data.name;
+                    this.userData=response.data;
+                    console.log(this.userData);
 
       });
     
