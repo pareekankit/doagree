@@ -1,0 +1,15 @@
+<div class="w-25 m-auto pt-4">
+    <img [src]="baseUrlForChild+recommendedPostDataFromParent.created_by.image"  alt="" class="custom-Width img-border-top customimg-scroll" >
+</div>
+<div class="d-flex flex-column px-2">
+    <div class="d-flex flex-row justify-content-between ">
+        <div class="cow-name text-color py-2">
+            <img src="/assets/Ellipse 69.png" alt="" class=""><span class="p-1 pt-3 mx-1">{{recommendedPostDataFromParent.created_by.name}}</span>
+        </div>
+        <button class="follow-btn">Follow</button>
+    </div>
+    <div class="text-wrap text-center pt-3 ">
+        <p class="px-2 text-wrap m-0" >{{recommendedPostDataFromParent.created_by.phone}} </p>
+        <p class="px-2 text-wrap m-0" >{{recommendedPostDataFromParent.created_by.state}} </p>
+    </div>
+</div>

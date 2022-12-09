@@ -124,25 +124,15 @@
             <div class="heading-Recamaded">
                 <h3 class="Recommended-seller-heading pt-4">Recommended Sellers </h3>
             </div>
-            <div >
+            <div class="overflow-hidden d-flex custom-width">
                 <!--the new boston ,free camp  -->
 
-                <app-seller-card class="overflow-hidden d-flex custom-width" [baseUrlSended]="sendBaseUrlToChild" [sectionDataRecommendedSeller]="sectionDataArray" ></app-seller-card>
-                <!-- <ul class="pt-3 ulpersonscroll">
-                    <li class="box-shadow me-3 my-2 lipseronscroll" *ngFor="let person of sectionData.recommended_sellers;let i=index;">
-                        <div class="w-25 m-auto pt-3" *ngIf="sectionData.baseApiDataUrl">
-                            <img [src]="sectionData.baseApiDataUrl+person.image" (error)="setImg($event)" alt="" class="custom-Width img-border-top customimg-scroll" >
-                        </div>
-                        <div class="d-flex flex-column justify-content-between">
-                            <h3 class="personName">{{person.name}}</h3>
-                            <p class="placeName">{{person.state}}</p>
-                            <p class="placeName">{{person.phone}}</p>
-                            <a>
-                                <button type="button" class="follow-btn">Follow</button>
-                            </a>
-                        </div>
-                    </li>
-                </ul> -->
+                <ul class="pt-3 ulpersonscroll " *ngIf="sectionDataArray">
+                    
+                  <app-seller-card class="box-shadow me-3 my-2 lipseronscroll"  [personValue]="value"  *ngFor="let value of sectionDataArray;" [baseUrlSended]="sendBaseUrlToChild"></app-seller-card>
+                    
+                </ul>
+               
         </div>
     </div>
     </div>
@@ -222,25 +212,9 @@
             <div class="ads-card-wrapper">
                     <div class="overflow-hidden d-flex custom-width">
                         
-                        <ul class="pt-3 " *ngIf="sectionData.recommended_feed">
-                            <li class="box-shadow me-3 my-2 p-3" *ngFor="let post of sectionData.recommended_feed.section_data">
-                                <div class="w-25 m-auto pt-4">
-                                    <img src="{{sectionData.baseApiDataUrl}}{{post.created_by.image
-                                    }}" (error)="setImg($event)" alt="" class="custom-Width img-border-top customimg-scroll" >
-                                </div>
-                                <div class="d-flex flex-column px-2">
-                                    <div class="d-flex flex-row justify-content-between ">
-                                        <div class="cow-name text-color py-2">
-                                            <img src="/assets/Ellipse 69.png" alt="" class=""><span class="p-1 pt-3 mx-1">{{post.created_by.name}}</span>
-                                        </div>
-                                        <button class="follow-btn">Follow</button>
-                                    </div>
-                                    <div class="text-wrap text-center pt-3 ">
-                                        <p class="px-2 text-wrap m-0" >{{post.created_by.phone}} </p>
-                                        <p class="px-2 text-wrap m-0" >{{post.created_by.state}} </p>
-                                    </div>
-                                </div>
-                            </li>
+                        <ul class="pt-3 d-flex" *ngIf="sectionData.recommended_feed">
+                            
+                             <app-recommended-post class="box-shadow me-3 my-2 p-3" [baseUrlForChild]=" sendBaseUrlToChild" [recommendedPostDataFromParent]='post' *ngFor="let post of recommandedDataToChild"></app-recommended-post>
                             
                         </ul>
                 </div>
