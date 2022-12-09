@@ -1,0 +1,30 @@
+.img-border-top{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.customimg-scroll {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+}
+.custom-Width{
+    width: 75px !important;
+    height: 75px !important;
+}
+.cow-name{
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 20px;
+}
+.text-color{
+    color: #294A10 !important;
+}
+.follow-btn{
+    background-color: #2D5014;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 16px;
+    color: white;
+    border: 1px solid #2D5014;
+}

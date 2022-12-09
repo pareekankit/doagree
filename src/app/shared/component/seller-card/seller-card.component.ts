@@ -11,8 +11,14 @@ export class SellerCardComponent implements OnInit {
   //   recommended_sellers:null
   // }
 
-  @Input() sectionDataRecommendedSeller=null; 
-  @Input() baseUrlSended=null;
+  // @Input() sectionDataRecommendedSeller=null; 
+     @Input() baseUrlSended=null;
+  // @Input() personImage=null;
+  // @Input() personState=null;
+  // @Input() personName=null;
+  // @Input() personPhone=null;
+     @Input() personValue: any;
+
   constructor() {
 
    }

@@ -1,15 +1,12 @@
-<ul class="pt-3 ulpersonscroll" *ngIf="sectionDataRecommendedSeller"  >
-    <li class="box-shadow me-3 my-2 lipseronscroll" *ngFor="let person of sectionDataRecommendedSeller;let i=index;">
-        <div class="w-25 m-auto pt-3" >
-            <img *ngIf="baseUrlSended" [src]="baseUrlSended+person.image" alt="" class="custom-Width img-border-top customimg-scroll" >
-        </div>
-        <div class="d-flex flex-column justify-content-between">
-            <h3 class="personName">{{person.name}}</h3>
-            <p class="placeName">{{person.state}}</p>
-            <p class="placeName">{{person.phone}}</p>
-            <a>
-                <button type="button" class="follow-btn">Follow</button>
-            </a>
-        </div>
-    </li>
-</ul>
+
+<div class="w-25 m-auto pt-3" >
+    <img *ngIf="baseUrlSended" [src]="baseUrlSended+personValue.image" alt="" class="custom-Width img-border-top customimg-scroll" >
+</div>
+<div class="d-flex flex-column justify-content-between">
+    <h3 class="personName">{{personValue.name}}</h3>
+    <p class="placeName">{{personValue.state}}</p>
+    <p class="placeName">{{personValue.phone}}</p>
+    <a>
+        <button type="button" class="follow-btn">Follow</button>
+    </a>
+</div>

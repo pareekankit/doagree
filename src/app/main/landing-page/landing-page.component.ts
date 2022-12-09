@@ -31,7 +31,8 @@ export class LandingPageComponent implements OnInit {
     animalName:any='Sahiwal Cow';
     animalRate:any='R 43000';
     sectionDataArray:any;          
-    sendBaseUrlToChild:any;    
+    sendBaseUrlToChild:any;
+    recommandedDataToChild:any;    
   constructor(private apiMethod:ApiCallMethodsService,private router:Router) { 
       
       apiMethod.get(apiRoutes.getProfile).then((response:any)=>{
@@ -75,6 +76,8 @@ export class LandingPageComponent implements OnInit {
                           if(el.module_name_check=="recommended_feed"){
 
                                     this.sectionData.recommended_feed=el;
+                                    this.recommandedDataToChild=el.section_data;
+                                    console.log(this.recommandedDataToChild)
                           }  
                           if(el.module_name_check=="refer_and_earn"){
                             
@@ -119,6 +122,11 @@ export class LandingPageComponent implements OnInit {
 
   }
 
+  items = ['item1', 'item2', 'item3', 'item4'];
+
+  addItem(newItem: string) {
+    this.items.push(newItem);
+  }
  
  
 }
