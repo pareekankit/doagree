@@ -1,7 +1,7 @@
-<ul class="pt-3 ulpersonscroll">
-    <li class="box-shadow me-3 my-2 lipseronscroll" *ngFor="let person of sectionData.recommended_sellers;let i=index;">
-        <div class="w-25 m-auto pt-3" *ngIf="sectionData.baseApiDataUrl">
-            <img [src]="sectionData.baseApiDataUrl+person.image" (error)="setImg($event)" alt="" class="custom-Width img-border-top customimg-scroll" >
+<ul class="pt-3 ulpersonscroll" *ngIf="sectionDataRecommendedSeller"  >
+    <li class="box-shadow me-3 my-2 lipseronscroll" *ngFor="let person of sectionDataRecommendedSeller;let i=index;">
+        <div class="w-25 m-auto pt-3" >
+            <img *ngIf="baseUrlSended" [src]="baseUrlSended+person.image" alt="" class="custom-Width img-border-top customimg-scroll" >
         </div>
         <div class="d-flex flex-column justify-content-between">
             <h3 class="personName">{{person.name}}</h3>

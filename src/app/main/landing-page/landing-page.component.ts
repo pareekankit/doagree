@@ -29,7 +29,9 @@ export class LandingPageComponent implements OnInit {
     value:any='text input';  
     imgSrc:any='/assets/Rectangle 111.png';
     animalName:any='Sahiwal Cow';
-    animalRate:any='R 43000';              
+    animalRate:any='R 43000';
+    sectionDataArray:any;          
+    sendBaseUrlToChild:any;    
   constructor(private apiMethod:ApiCallMethodsService,private router:Router) { 
       
       apiMethod.get(apiRoutes.getProfile).then((response:any)=>{
@@ -40,6 +42,7 @@ export class LandingPageComponent implements OnInit {
       apiMethod.get(apiRoutes.main+""+'?language=en&longitude=88.259499&latitude=22.508421').then((Response:any)=>{
               
                     this.sectionData.baseApiDataUrl =Response.base_url;
+                    this.sendBaseUrlToChild=Response.base_url;
                     Response.data.forEach((el:any) => {
                       
                           if(el.module_name_check=="youtube_link"){
@@ -53,7 +56,8 @@ export class LandingPageComponent implements OnInit {
                           }
                           if(el.module_name_check=='recommended_sellers'){
 
-                                    this.sectionData.recommended_sellers=el.section_data
+                                    this.sectionData.recommended_sellers=el.section_data;
+                                    this.sectionDataArray=el.section_data;
                           }
                           if(el.module_name_check=='safety_tips'){
 
