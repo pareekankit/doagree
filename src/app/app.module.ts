@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { MainModule } from './main/main.module';
 import { FormsModule } from '@angular/forms';
 import { GeolocationComponent } from './geolocation/geolocation.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { GeolocationComponent } from './geolocation/geolocation.component';
     AuthenticationModule,
     SharedModule,
     MainModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -349,5 +349,5 @@
   </div>
   </section>
   <div class="d-inline-block m-5" *ngFor="let i of [1,1,1,1]">
-  <app-card [userImage]="userData.image" [userName]="userData.name" [Follow]="follow" [location]="userData.city"></app-card>
+  <app-card [userImage]="userData.image" [userName]="userData.name" (FollowtoPerson)="dataFromChildToParent($event)" [location]="userData.city"></app-card>
 </div>

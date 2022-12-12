@@ -15,7 +15,7 @@ export class LandingPageComponent implements OnInit {
   city:'',
   state:'',
 }
-follow="Follow"
+follow:any;
   sectionData:any={
                     baseApiDataUrl:null,
                     loginPersonDetail:null,
@@ -117,6 +117,11 @@ follow="Follow"
                 console.log(error);
            })
 
+  }
+
+  dataFromChildToParent(event:any)
+  {
+    console.log(event);
   }
  
 }

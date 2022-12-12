@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -6,10 +6,19 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
+baseUrl:any = "https://myclientdemo.us/doagri/public";
+
   @Input() userImage='';
   @Input() userName='';
   @Input() location='';
-  @Input() Follow='';
+
+  @Output() FollowtoPerson = new EventEmitter<any>();
+
+  followRequested(value:any)
+  {
+    this.FollowtoPerson.emit(value);
+  }
+
   constructor() { }
 
   ngOnInit(): void {
