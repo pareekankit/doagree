@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -12,12 +12,6 @@ baseUrl:any = "https://myclientdemo.us/doagri/public";
   @Input() userName='';
   @Input() location='';
 
-  @Output() FollowtoPerson = new EventEmitter<any>();
-
-  followRequested(value:any)
-  {
-    this.FollowtoPerson.emit(value);
-  }
 
   constructor() { }
 
