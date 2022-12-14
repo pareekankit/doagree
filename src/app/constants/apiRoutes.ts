@@ -8,5 +8,6 @@ export const apiRoutes = {
    location:"user/get-location",
    logOut:'auth/logout',
    main:'home',
-   getProfile:'auth/get-profile'
+   getProfile:'auth/get-profile',
+   productcategory:'product-category'
 }

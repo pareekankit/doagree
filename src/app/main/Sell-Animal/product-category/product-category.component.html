@@ -1,0 +1,84 @@
+<section>
+    <div class="add-product-wrapper">
+        <div class="container">
+            <div class="d-flex col-12 pt-4">
+                <h2 class="font-size-20 font-color text-start">Sell Animal</h2>
+            </div>
+        </div>
+    </div>
+     <div class="selected-animal-wrapper">
+        <div class="container">
+            <div class="d-flex col-12 pt-4">
+                <div class="">
+                    <img src="/assets/squre.png" alt="square-img" class="w-100">
+                </div>
+                <div>
+                    <h3 class="font-color font-animal ps-2" >Which animal?<span class="text-danger">*</span></h3>
+                </div>
+            </div>
+            <div class="animal-photo">
+                <div class="animal-photo-wrapper">
+                    <div class="d-flex flex-row mt-3 flex-wrap"  *ngIf="sectionData.productCategoryData">
+                        <div class=" col-4"  *ngFor="let animal of sectionData.productCategoryData">
+                            <div class="d-flex flex-column align-items-center box-style me-4">
+                                <div class="w-25 d-flex justify-content-between pt-2 h-100">
+                                    <img [src]="animal.image" [alt]="animal.description" class="w-100 p-2 ">
+                                </div>
+                                <div class="d-flex justify-content-between mt-3">
+                                    <h2 class="font-color size-toSell pt-3 " *ngIf="sectionData.productCategoryData">
+                                        {{animal.category}}
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+     <div class="animal-breed-wrapper">
+        <div class="container">
+            <div class="d-flex col-12 pt-4">
+                <div class="">
+                    <img src="/assets/squre.png" alt="square-img" class="w-100">
+                </div>
+                <div>
+                    <h3 class="font-color font-animal ps-2" >Which breed?</h3>
+                </div>
+            </div>
+            <div class="select-animal">
+                <div class="d-flex">
+                    <div class="selected-animal">
+                        <div class="custom-wid " >
+                            <input type="text" placeholder="----Select Option----" class="py-2 px-2 width" (click)="showListOfOption()" [value]="selectedAnimalBreed">
+                        </div>
+                        <div class="listofOption" *ngIf="checkOption==true" >
+                            <ul class="d-flex flex-column p-0 m-0" >
+                                <li class="d-flex col-12 justify-content-between bg-color p-2 rounded-3" (click)="thisOptionSelected($event)">
+                                    <span  class="col-6 font-color option-font">Gyr Cattle</span> 
+                                    <input class="col-1 d-flex justify-content-end" value="Gyr Cattle" type="radio"
+                                     [checked]="selectedAnimalBreed == 'Gyr Cattle'">
+                                </li>
+
+                                <li class="d-flex col-12 justify-content-between bg-color p-2 rounded-3" (click)="thisOptionSelected($event)">
+                                    <span  class="col-6 font-color option-font">Sahiwal Cattle</span>
+                                    <input class="col-1 d-flex justify-content-end" value="Sahiwal Cattle" type="radio"
+                                    [checked]="selectedAnimalBreed == 'Sahiwal Cattle'" >
+                                </li>
+
+                                <li class="d-flex col-12 justify-content-between bg-color p-2 rounded-3" (click)="thisOptionSelected($event)">
+                                    <span  class="col-6 font-color option-font">Kangayam Cattle</span> 
+                                    <input class="col-1 d-flex justify-content-end" value="Kangayam Cattle" type="radio"
+                                    [checked]="selectedAnimalBreed == 'Kangayam Cattle'" >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                  
+            </div>
+        </div>
+     </div>
+     
+</section>
