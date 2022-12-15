@@ -16,15 +16,32 @@ export class ProductCategoryComponent {
   }
   selectedAnimalBreed:string ='';
   checkOption:boolean=false;
+  enterValueOfMilk:any;
+  currentMilk:any;
+  enteredValue:any;
+  Litres:string='Litres';
   constructor(private apiMethod:ApiCallMethodsService){
 
               apiMethod.get(apiRoutes.productcategory+'?language='+localStorage.getItem('code')).then((Response:any)=>{
                 console.log(Response)
                         this.sectionData.baseApiDataUrl = Response.base_url;
                         this.sectionData.productCategoryData=Response.data;
-              });  
+              }); 
+              
 
   }
+  checkValueOfMilk(value:any){
+    console.log(value)
+    if(value.key=='Enter'){
+      if(this.currentMilk){
+        this.currentMilk=this.currentMilk+this.Litres;
+      }
+    } 
+  }
+  
+  refreshValue(){
+      this.currentMilk='';
+  }  
   showListOfOption(){
     this.checkOption=true;  
   }
@@ -32,5 +49,6 @@ export class ProductCategoryComponent {
     this.selectedAnimalBreed=event.target.innerText;
     this.checkOption=false;
   }
+  
 
 }

@@ -50,26 +50,26 @@
             <div class="select-animal">
                 <div class="d-flex">
                     <div class="selected-animal">
-                        <div class="custom-wid " >
-                            <input type="text" placeholder="----Select Option----" class="py-2 px-2 width" (click)="showListOfOption()" [value]="selectedAnimalBreed">
+                        <div class="custom-wid mt-2" >
+                            <input type="text" placeholder="----Select Option----" class="py-2 px-3 width rounded-3" (click)="showListOfOption()" [value]="selectedAnimalBreed">
                         </div>
                         <div class="listofOption" *ngIf="checkOption==true" >
                             <ul class="d-flex flex-column p-0 m-0" >
                                 <li class="d-flex col-12 justify-content-between bg-color p-2 rounded-3" (click)="thisOptionSelected($event)">
-                                    <span  class="col-6 font-color option-font">Gyr Cattle</span> 
-                                    <input class="col-1 d-flex justify-content-end" value="Gyr Cattle" type="radio"
+                                    <span  class="col-11 font-color option-font">Gyr Cattle</span> 
+                                    <input class="w-5 d-flex justify-content-end" value="Gyr Cattle" type="radio"
                                      [checked]="selectedAnimalBreed == 'Gyr Cattle'">
                                 </li>
 
                                 <li class="d-flex col-12 justify-content-between bg-color p-2 rounded-3" (click)="thisOptionSelected($event)">
-                                    <span  class="col-6 font-color option-font">Sahiwal Cattle</span>
-                                    <input class="col-1 d-flex justify-content-end" value="Sahiwal Cattle" type="radio"
+                                    <span  class="col-11 font-color option-font">Sahiwal Cattle</span>
+                                    <input class="w-5 d-flex justify-content-end" value="Sahiwal Cattle" type="radio"
                                     [checked]="selectedAnimalBreed == 'Sahiwal Cattle'" >
                                 </li>
 
                                 <li class="d-flex col-12 justify-content-between bg-color p-2 rounded-3" (click)="thisOptionSelected($event)">
-                                    <span  class="col-6 font-color option-font">Kangayam Cattle</span> 
-                                    <input class="col-1 d-flex justify-content-end" value="Kangayam Cattle" type="radio"
+                                    <span  class="col-11 font-color option-font">Kangayam Cattle</span> 
+                                    <input class="w-5 d-flex justify-content-end" value="Kangayam Cattle" type="radio"
                                     [checked]="selectedAnimalBreed == 'Kangayam Cattle'" >
                                 </li>
                             </ul>
@@ -81,4 +81,138 @@
         </div>
      </div>
      
+     <div class="lactation-period-wrapper">
+        <div class="container">
+            <div class="bg-blue mx-1 mt-5 rounded-3 pb-4">
+                <div class="d-flex flex-column">
+                    <div class="d-flex col-12 pt-4">
+                        <div class="d-flex flex-column pt-2">
+                            <img src="/assets/cow (2).png" alt="square-img" class="w-100">
+                            <img src="/assets/cow (1).png" alt="square-img" style="width: 5px;margin-left: 5px;">
+                        </div>
+                        <div>
+                            <h3 class="font-color font-animal ps-2" >Lactation Period?<span class="text-danger">*</span></h3>
+                        </div>
+                    </div>
+                    <div class="custom-wid mt-2" >
+                        <select type="text" placeholder="" class="py-3 px-3 width rounded-3" >
+                            <option value="1 months ago">1 months ago</option>
+                            <option value="2 months ago">2 months ago</option>
+                            <option value="3 months ago">3 months ago</option>
+                            <option value="4 months ago">4 months ago</option>
+                            <option value="5 months ago">5 months ago</option>
+                            <option value="6 months ago">6 months ago</option>
+                            <option value="7 months ago">7 months ago</option>
+                            <option value="8 months ago">8 months ago</option>
+                            <option value="9 months ago">9 months ago</option>
+                        </select>
+                        
+                    </div>
+                    <div class="d-flex col-12 pt-4">
+                        <div class="d-flex flex-column pt-2">
+                            <img src="/assets/Vector (2).png" alt="square-img" class="w-100">
+                            <img src="/assets/Vector (3).png" alt="square-img" class="w-100" >
+                        </div>
+                        <div>
+                            <h3 class="font-color font-animal ps-2" >Current Milk?<span class="text-danger">*</span> (Litres per day)</h3>
+                        </div>
+                    </div>
+                    <div class="custom-wid mt-2" >
+                        <input type="text" placeholder="" (click)="refreshValue()"  (keypress)='checkValueOfMilk($event)'  [(ngModel)]="currentMilk"  class="py-2 px-3 width rounded-3">
+                        
+                    </div>
+                    <div class="d-flex col-12 pt-4">
+                        <div class="d-flex flex-column pt-2">
+                            <img src="/assets/Vector (2).png" alt="square-img" class="w-100">
+                            <img src="/assets/Vector (3).png" alt="square-img" class="w-100" >
+                        </div>
+                        <div>
+                            <h3 class="font-color font-animal ps-2" >Milk Capacity? (Litres per day)</h3>
+                        </div>
+                    </div>
+                    <div class="custom-wid mt-2" >
+                        <input type="text" placeholder="" class="py-2 px-3 width rounded-3">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+     <div class="selling-price-wrapper">
+        <div class="container">
+            <div class=" mx-1 mt-5 rounded-3 pb-4">
+                <div class="d-flex flex-column">
+                    <div class="d-flex col-12 pt-4">
+                        <div class="d-flex flex-column pt-2">
+                            <img src="/assets/₹.png" alt="square-img" class="w-100">
+                            
+                        </div>
+                        <div>
+                            <h3 class="font-color font-animal ps-2" >Expected Selling Price<span class="text-danger">*</span></h3>
+                        </div>
+                    </div>
+                    <div class="custom-wid mt-2" >
+                        <input type="text" placeholder=""  class="py-2 px-3 width rounded-3">
+                    </div>
+                    <div class="custom-wid mt-2" >
+                        <input type="checkbox" placeholder=""  style="width: 18px;height: 18px;" class="p-1  rounded-3"><label for="" class="font-color font-price ms-1">Is price negotiable?</label>
+                    </div>
+                     <div class="d-flex col-12 pt-4">
+                        <div class="d-flex flex-column pt-2">
+                            <img src="/assets/Vector (4).png" alt="square-img" class="w-100">
+                           
+                        </div>
+                        <div>
+                            <h3 class="font-color font-animal ps-2" >Animal Location?<span class="text-danger">*</span></h3>
+                        </div>
+                    </div>
+                    <div class="custom-wid mt-2" >
+                        <input type="text" placeholder="" class="py-2 px-3 width rounded-3">
+                    </div>
+
+                    <div class="d-flex col-12 pt-4">
+                        <div class="d-flex flex-column pt-2">
+                            <img src="/assets/Vector (5).png" alt="square-img" class="w-100">
+                           
+                        </div>
+                        <div>
+                            <h3 class="font-color font-animal ps-2">Pregnant Status?<span class="text-danger">*</span></h3>
+                        </div>
+                    </div>
+                    <div class="custom-wid mt-2" >
+                        <select type="text" placeholder="" class="py-3 px-3 width rounded-3" >
+                            <option value="Not Pregnant">Not Pregnant</option>
+                            <option value="Pregnant">Pregnant</option>
+                        </select>
+                    </div>
+
+
+                    <div class="d-flex col-12 pt-4">
+                        <div class="d-flex flex-column pt-2">
+                            <img src="/assets/Vector (5).png" alt="square-img" class="w-100">
+                           
+                        </div>
+                        <div>
+                            <h3 class="font-color font-animal ps-2">Pregnant Status?<span class="text-danger">*</span></h3>
+                        </div>
+                    </div>
+                    <div class="custom-wid mt-2" >
+                        <select type="text" placeholder="" class="py-3 px-3 width rounded-3" >
+                                <option value="1 months ago">1 months ago</option>
+                                <option value="2 months ago">2 months ago</option>
+                                <option value="3 months ago">3 months ago</option>
+                                <option value="4 months ago">4 months ago</option>
+                                <option value="5 months ago">5 months ago</option>
+                                <option value="6 months ago">6 months ago</option>
+                                <option value="7 months ago">7 months ago</option>
+                                <option value="8 months ago">8 months ago</option>
+                                <option value="9 months ago">9 months ago</option>
+                        </select>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+     </div>
 </section>

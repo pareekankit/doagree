@@ -41,7 +41,7 @@ select option[value="1"] {
     color: #294A10;
   }
 .width{
-    width: 50rem !important;
+    width: 80rem !important;
 }
 input:focus-visible {
     outline: #294A10 auto 1px !important;
@@ -53,6 +53,12 @@ input:focus-visible {
   }
 input[type=text]{
     background-color: #FFF8E8;
+}
+input[type=number]{
+    background-color: #FFF8E8;
+} 
+input[type=checkbox]{
+    accent-color: #294A10 !important;
 }  
 .bg-color{
     background-color: #FFF8E8;
@@ -65,4 +71,22 @@ input[type=text]{
 input[type="radio"] {
     accent-color: #294A10 !important;
 
+}
+.w-5{
+    width: 3%;
+}
+.bg-blue{
+    background: rgba(41, 167, 26, 0.1);
+}
+select[type=text]{
+    background-color: #FFF8E8;
+    
+}  
+option{
+    background-color: #FFF8E8;
+}
+.font-price{
+    font-size: 20px;
+    line-height: 18px;
+    color: #828282;
 }
