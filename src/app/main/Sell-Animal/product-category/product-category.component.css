@@ -1,7 +1,6 @@
 *{
-font-family: 'Poppins';
+
 font-style: normal;
-font-weight: 400;
 }
 .font-color{
    color: #366315;
@@ -84,9 +83,40 @@ select[type=text]{
 }  
 option{
     background-color: #FFF8E8;
+    color: #366315;
+    padding: 10px 0px;
 }
 .font-price{
     font-size: 20px;
     line-height: 18px;
     color: #828282;
+}
+.clock-style{
+    width: 8px;
+    margin-top: 2px;
+    margin-left: 3px;
+
+}
+select{
+    color:  #4E931C;
+    font-weight: bold;
+    font-size: 20px;
+}
+textarea{
+    background-color: #FFF8E8;
+    color: #4E931C;
+    font-weight: bold;
+    font-size: 20px;
+}
+textarea::placeholder{
+    color: #BCB7B7 !important;
+    font-weight: 15px !important;
+    font-weight: lighter !important;
+}
+.custom-videoImg{
+    width: 10px;
+    height: 10px;
+}
+.border-type{
+    border: dotted 4px #366315;
 }

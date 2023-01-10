@@ -49,6 +49,8 @@ export class ProductCategoryComponent {
     this.selectedAnimalBreed=event.target.innerText;
     this.checkOption=false;
   }
-  
+  videoUpload(videoUpload:HTMLInputElement){
+    videoUpload.click()
+  }
 
 }

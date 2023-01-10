@@ -194,7 +194,7 @@
                            
                         </div>
                         <div>
-                            <h3 class="font-color font-animal ps-2">Pregnant Status?<span class="text-danger">*</span></h3>
+                            <h3 class="font-color font-animal ps-2">Cattle delivered baby?</h3>
                         </div>
                     </div>
                     <div class="custom-wid mt-2" >
@@ -210,7 +210,112 @@
                                 <option value="9 months ago">9 months ago</option>
                         </select>
                     </div>
+
+                    <div class="d-flex col-12 pt-4">
+                        <div class="d-flex flex-column pt-2">
+                            <img src="../../../../assets/Vector (7).png" alt="square-img" class="w-100 position-relative">
+                            <img src="../../../../assets/Line 1.png" alt="square-img" class="clock-style position-absolute" >
+                           
+                        </div>
+                        <div>
+                            <h3 class="font-color font-animal ps-2">Age of the animal?</h3>
+                        </div>
+                    </div>
+                    <div class="custom-wid mt-2" >
+                        <select type="text" placeholder="" class="py-3 px-3 width rounded-3" >
+                                <option value="1 years">1 years</option>
+                                <option value="2 years">2 years</option>
+                                <option value="3 years">3 years</option>
+                                <option value="4 years">4 years</option>
+                                <option value="5 years">5 years</option>
+                                <option value="6 years">6 years</option>
+                                <option value="7 years">7 years</option>
+                                <option value="8 years">8 years</option>
+                                <option value="9 years">9 years</option>
+                        </select>
+                    </div>
                     
+                    <div class="d-flex col-12 pt-4">
+                        <div class="d-flex flex-column pt-2">
+                            <img src="/assets/Vector (9).png" alt="square-img" class="w-100">
+                           
+                        </div>
+                        <div>
+                            <h3 class="font-color font-animal ps-2">How many calf with the cattle?</h3>
+                        </div>
+                    </div>
+                    <div class="custom-wid mt-2" >
+                        <select type="text" placeholder="" class="py-3 px-3 width rounded-3" >
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex col-12 pt-4">
+                        <div class="d-flex flex-column pt-1">
+                            <img src="/assets/Vector (11).png" alt="square-img" class="w-100">
+                        </div>
+                        <div>
+                            <h3 class="font-color font-animal ps-2">Photos (min 1 photo required)<span class="text-danger">*</span></h3>
+                        </div>
+                    </div>
+                    <div class="custom-wid mt-2" >
+                        <textarea  cols="10" rows="4" placeholder="Write something about your animal..." class="py-3 px-3 width rounded-3"></textarea>
+                    </div>
+                    <div class="d-flex col-12 pt-4">
+                        <div class="d-flex flex-column pt-1">
+                            <img src="/assets/Vector (10).png" alt="square-img" class="w-100">
+                           
+                        </div>
+                        <div>
+                            <h3 class="font-color font-animal ps-2">Enter Description</h3>
+                        </div>
+                    </div>
+                    <div class="custom-wid " >
+                        <!-- <textarea  cols="10" rows="4" " class="py-3 px-3 width rounded-3"></textarea> -->
+                        <div class="width rounded-3 bg-color d-flex flex-column border-type p-4" (click)="videoUpload(uploadVideo)">
+                            <div class="d-flex justify-content-center mb-3">
+                                <img src="/assets/video-cross.png" alt="video-cross" height="20" width="20" class="text-center">
+                            </div>
+                            <p class="font-color text-center" >Video Upload</p>
+                            <input type="file" name="myVideo" accept=".mp4,hd" style="display: none;" #uploadVideo>
+                        </div>
+                        
+                    </div>
+                    <div class="custom-wid mt-2 d-flex flex-column ">
+                        <div class="d-flex flex-row justify-content-between">
+                            <div class="col-5 p-4 rounded-3 bg-color d-flex my-4  flex-column  border-type justify-content-center ">
+                                <div class="d-flex justify-content-center" > <img src="../../../../assets/cowFront 1.png" width="60" height="60" alt="cowPhoto">
+                                </div>
+                                <div>
+                                    <p class=" text-center font-color">Front View Photo</p>
+                                </div>
+                            </div>
+                            <div class="col-5 p-4 rounded-3 bg-color d-flex my-4  flex-column border-type  justify-content-center ">
+                                <div  class="d-flex justify-content-center" ><img src="../../../../assets/cowBack 1.png" width="60" height="60" alt="cowPhoto">
+                                </div>
+                                <div>
+                                    <p class=" text-center font-color">Back View Photo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-between">
+                            <div class="col-5 p-4 rounded-3 bg-color d-flex my-4  flex-column border-type  justify-content-center ">
+                                <div  class="d-flex justify-content-center" ><img src="../../../../assets/cowSide 1.png" width="60" height="60" alt="cowPhoto">
+                                </div>
+                                <div>
+                                    <p class=" text-center font-color">Right Side View Photo</p>
+                                </div>
+                            </div>
+                            <div class="col-5 p-4 rounded-3 bg-color d-flex my-4  flex-column border-type  justify-content-center ">
+                                <div  class="d-flex justify-content-center" ><img src="../../../../assets/cowSide 2.png" width="60" height="60" alt="cowPhoto">
+                                </div>
+                                <div>
+                                    <p class=" text-center font-color">Left Side View Photo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
